@@ -1,4 +1,4 @@
-namespace Databae.EF.DTO
+namespace Database.EF.DTO
 {
     using System;
     using System.Collections.Generic;

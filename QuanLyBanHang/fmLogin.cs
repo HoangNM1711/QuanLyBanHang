@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Database.EF.DAO;
+using QuanLyBanHang.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +12,14 @@ using System.Windows.Forms;
 
 namespace QuanLyBanHang
 {
-    public partial class fmMain : MetroFramework.Forms.MetroForm
+    public partial class fmLogin : MetroFramework.Forms.MetroForm
     {
-        public fmMain()
+        public fmLogin()
         {
             InitializeComponent();
         }
 
-        private void fmMain_Load(object sender, EventArgs e)
+        private void fmLogin_Load(object sender, EventArgs e)
         {
 
         }
@@ -37,13 +39,42 @@ namespace QuanLyBanHang
         private const string passwordtxb = "Mật khẩu";
         private void PasswordTxb_GotFocus(object sender, EventArgs e)
         {
+            PasswordTxb.UseSystemPasswordChar = true;
             PasswordTxb.Text = PasswordTxb.Text == passwordtxb ? string.Empty : PasswordTxb.Text;
         }
 
         private void PasswordTxb_LostFocus(object sender, EventArgs e)
         {
             PasswordTxb.Text = PasswordTxb.Text == string.Empty ? passwordtxb : PasswordTxb.Text;
-            PasswordTxb.UseSystemPasswordChar = true;
+        }
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            var dao = new UserDAO();
+            var result = dao.Login(UsernameTxb.Text, Encryptor.MD5Hash(PasswordTxb.Text));
+            if (result == 1)
+            {
+                fmMain main = new fmMain();
+                this.Hide();
+                main.ShowDialog();
+                this.Show();
+            }
+            else if (result == 0)
+            {
+                MessageBox.Show("Tài khoản không tồn tại.");
+            }
+            else
+            {
+                MessageBox.Show("Sai mật khẩu");
+            }
+        }
+
+        private void RegisterBtn_Click(object sender, EventArgs e)
+        {
+            fmRegister fm = new fmRegister();
+            this.Hide();
+            fm.ShowDialog();
+            this.Show();
         }
     }
 }
