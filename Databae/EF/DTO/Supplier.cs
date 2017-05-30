@@ -6,22 +6,17 @@ namespace Database.EF.DTO
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Order")]
-    public partial class Order
+    [Table("Supplier")]
+    public partial class Supplier
     {
         public long ID { get; set; }
 
         [StringLength(50)]
-        public string CustomerName { get; set; }
+        public string Name { get; set; }
 
-        [StringLength(250)]
-        public string CustomerAddress { get; set; }
+        public int? Stock { get; set; }
 
-        [StringLength(50)]
-        public string CustomerPhone { get; set; }
-
-        [StringLength(50)]
-        public string CustomerEmail { get; set; }
+        public int? Sold { get; set; }
 
         public DateTime? CreatedDate { get; set; }
 

@@ -1,9 +1,5 @@
 ﻿using Database.EF.DTO;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Database.EF.DAO
 {
@@ -15,6 +11,20 @@ namespace Database.EF.DAO
             db = new ShopDbContext();
         }
 
+        private static UserDAO instance;
+
+        public static UserDAO Instance
+        {
+            get
+            {
+                if (instance == null) instance = new UserDAO();
+                return UserDAO.instance;
+            }
+            private set
+            {
+                UserDAO.Instance = null;
+            }
+        }
         public int Login (string username, string password)
         {
             var result = db.Users.SingleOrDefault(x => x.Username == username);

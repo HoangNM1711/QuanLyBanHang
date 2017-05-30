@@ -165,6 +165,7 @@
             // 
             // fmLogin
             // 
+            this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 314);
@@ -173,7 +174,6 @@
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "fmLogin";
             this.Padding = new System.Windows.Forms.Padding(20, 65, 20, 22);
-            this.Load += new System.EventHandler(this.fmLogin_Load);
             this.mLoginPanel.ResumeLayout(false);
             this.mLoginPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

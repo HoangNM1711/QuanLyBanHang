@@ -12,11 +12,9 @@ namespace Database.EF.DTO
         public long ID { get; set; }
 
         [StringLength(50)]
-        [Required]
         public string Username { get; set; }
 
         [StringLength(50)]
-        [Required]
         public string Password { get; set; }
 
         [StringLength(50)]

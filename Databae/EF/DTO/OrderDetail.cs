@@ -24,5 +24,12 @@ namespace Database.EF.DTO
         public decimal? Price { get; set; }
 
         public decimal? Total { get; set; }
+
+        [StringLength(50)]
+        public string Status { get; set; }
+
+        public DateTime? CreatedDate { get; set; }
+
+        public DateTime? ModifiedDate { get; set; }
     }
 }

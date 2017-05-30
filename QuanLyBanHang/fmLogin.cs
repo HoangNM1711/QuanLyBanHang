@@ -18,12 +18,7 @@ namespace QuanLyBanHang
         {
             InitializeComponent();
         }
-
-        private void fmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        /* Event */
         private const string usernametxb = "Tên đăng nhập";
         private void UsernameTxb_GotFocus(object sender, EventArgs e)
         {
@@ -47,17 +42,17 @@ namespace QuanLyBanHang
         {
             PasswordTxb.Text = PasswordTxb.Text == string.Empty ? passwordtxb : PasswordTxb.Text;
         }
+        /* Kết thúc Event */
 
+        /* Thiết lập nút */
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            var dao = new UserDAO();
-            var result = dao.Login(UsernameTxb.Text, Encryptor.MD5Hash(PasswordTxb.Text));
+            var result = UserDAO.Instance.Login(UsernameTxb.Text, Encryptor.MD5Hash(PasswordTxb.Text));
             if (result == 1)
             {
                 fmMain main = new fmMain();
                 this.Hide();
                 main.ShowDialog();
-                this.Show();
             }
             else if (result == 0)
             {
@@ -76,5 +71,7 @@ namespace QuanLyBanHang
             fm.ShowDialog();
             this.Show();
         }
+
+
     }
 }

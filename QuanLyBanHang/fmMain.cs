@@ -17,14 +17,15 @@ namespace QuanLyBanHang
             InitializeComponent();
         }
 
-        private void fmMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void thoatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Application.Exit();
+        }
+
+        private void loạiSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmCategory fm = new fmCategory();
+            fm.ShowDialog();
         }
     }
 }

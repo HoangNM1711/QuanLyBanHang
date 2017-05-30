@@ -7,8 +7,8 @@
     <ProjectGuid>{FF7755C6-D4D7-4DD0-8D48-B8161595A928}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Databae</RootNamespace>
-    <AssemblyName>Databae</AssemblyName>
+    <RootNamespace>Database</RootNamespace>
+    <AssemblyName>Database</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -51,12 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EF\DAO\CategoryDAO.cs" />
     <Compile Include="EF\DAO\UserDAO.cs" />
     <Compile Include="EF\DTO\Category.cs" />
     <Compile Include="EF\DTO\Order.cs" />
     <Compile Include="EF\DTO\OrderDetail.cs" />
     <Compile Include="EF\DTO\Product.cs" />
     <Compile Include="EF\DTO\ShopDbContext.cs" />
+    <Compile Include="EF\DTO\Supplier.cs" />
     <Compile Include="EF\DTO\sysdiagram.cs" />
     <Compile Include="EF\DTO\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
