@@ -14,20 +14,19 @@ namespace Database.EF.DTO
         [StringLength(250)]
         public string Name { get; set; }
 
-        [StringLength(250)]
-        public string Image { get; set; }
-
         public decimal? Price { get; set; }
 
         public int? Quantity { get; set; }
 
         public int? Sold { get; set; }
 
-        public long? CategoryID { get; set; }
+        public long CategoryID { get; set; }
 
-        public long? SupplierID { get; set; }
+        public long SupplierID { get; set; }
 
         public DateTime? CreatedDate { get; set; }
+
+        public DateTime? ModifiedDate { get; set; }
 
         [StringLength(50)]
         public string Status { get; set; }

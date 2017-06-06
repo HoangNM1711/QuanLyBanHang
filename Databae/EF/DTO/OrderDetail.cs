@@ -9,14 +9,11 @@ namespace Database.EF.DTO
     [Table("OrderDetail")]
     public partial class OrderDetail
     {
-        [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public long ID { get; set; }
+
         public long ProductID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long OrderID { get; set; }
 
         public int? Quantity { get; set; }

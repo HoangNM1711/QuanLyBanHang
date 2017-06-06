@@ -92,11 +92,35 @@
     <Compile Include="fmMain.Designer.cs">
       <DependentUpon>fmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmOrder.Designer.cs">
+      <DependentUpon>fmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmOrderDetail.Designer.cs">
+      <DependentUpon>fmOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmProduct.Designer.cs">
+      <DependentUpon>fmProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fmRegister.Designer.cs">
       <DependentUpon>fmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmSupplier.Designer.cs">
+      <DependentUpon>fmSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,23 +133,27 @@
     <EmbeddedResource Include="fmMain.resx">
       <DependentUpon>fmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fmProduct.resx">
+      <DependentUpon>fmProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fmRegister.resx">
       <DependentUpon>fmRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -140,6 +168,9 @@
       <Project>{ff7755c6-d4d7-4dd0-8d48-b8161595a928}</Project>
       <Name>Database</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background Software 3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

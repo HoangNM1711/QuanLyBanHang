@@ -49,6 +49,22 @@ namespace QuanLyBanHang
             cbStatus.DataBindings.Add(new Binding("Text", CategoryGridView.DataSource, "Status", true, DataSourceUpdateMode.Never));
         }
 
+        public bool CheckForm ()
+        {
+            errorProvider.Clear();
+            if (String.IsNullOrWhiteSpace(txbCategoryName.Text))
+            {
+                errorProvider.SetError(txbCategoryName, "Loại sản phẩm không được để trống");
+                return false;
+            }
+
+            if (numberStock.Value < numberSold.Value)
+            {
+                errorProvider.SetError(numberStock, "Số lượng hàng tồn không vượt quá số lượng bán ");
+                return false;
+            }
+            return true;
+        }
         #endregion
 
         #region event
@@ -72,23 +88,36 @@ namespace QuanLyBanHang
         #region button
         private void btnCategoryAdd_Click(object sender, EventArgs e)
         {
-            Category cate = new Category();
-
-            var result = CategoryDAO.Instance.CheckCategory(txbCategoryName.Text);
-            if (result == 1)
+            if (CheckForm())
             {
-                cate.Name = txbCategoryName.Text;
-                cate.Stock = (int)numberStock.Value;
-                cate.Sold = (int)numberSold.Value;
-                cate.CreatedDate = DateTime.Now;
-                cate.Status = cbStatus.Text;
-                CategoryDAO.Instance.AddCategory(cate);
+                Category cate = new Category();
+                var result = CategoryDAO.Instance.CheckCategory(txbCategoryName.Text);
+                if (result == 1)
+                {
+                    cate.Name = txbCategoryName.Text;
+                    cate.Stock = (int)numberStock.Value;
+                    cate.Sold = (int)numberSold.Value;
+                    cate.CreatedDate = DateTime.Now;
+                    if ((int)numberStock.Value == 0)
+                    {
+                        cate.Status = "Hết hàng";
+                    }
+                    else
+                    {
+                        cate.Status = cbStatus.Text;
+                    }
+                    CategoryDAO.Instance.AddCategory(cate);
 
-                MessageBox.Show("Thêm loại sản phẩm thành công.");
-            }
+                    MessageBox.Show("Thêm loại sản phẩm thành công.");
+                }
+                else
+                {
+                    MessageBox.Show("Loại sản phẩm đã tồn tại.");
+                }
+            }           
             else
             {
-                MessageBox.Show("Loại sản phẩm đã tồn tại.");
+                MessageBox.Show("Thêm sản phẩm không thành công");
             }
             LoadListCategory();
         }
@@ -96,17 +125,28 @@ namespace QuanLyBanHang
 
         private void btnCategoryUpdate_Click(object sender, EventArgs e)
         {
-            var category = CategoryDAO.Instance.GetCategoryById(long.Parse(txbID.Text));
-            category.Stock = (int)numberStock.Value;
-            category.Sold = (int)numberSold.Value;
-            category.ModifiedDate = DateTime.Now;
-            category.Status = cbStatus.Text;
-
-            var result = CategoryDAO.Instance.UpdateCategory(category);
-            if (result)
+            if (CheckForm())
             {
-                MessageBox.Show("Cập nhật thành công.");
-            }
+                var category = CategoryDAO.Instance.GetCategoryById(long.Parse(txbID.Text));
+                category.Name = txbCategoryName.Text;
+                category.Stock = (int)numberStock.Value;
+                category.Sold = (int)numberSold.Value;
+                category.ModifiedDate = DateTime.Now;
+                if ((int)numberStock.Value == 0)
+                {
+                    category.Status = "Hết hàng";
+                }
+                else
+                {
+                    category.Status = cbStatus.Text;
+                }
+
+                var result = CategoryDAO.Instance.UpdateCategory(category);
+                if (result)
+                {
+                    MessageBox.Show("Cập nhật thành công.");
+                }
+            }            
             else
             {
                 MessageBox.Show("Cập nhật không thành công.");
@@ -127,10 +167,8 @@ namespace QuanLyBanHang
                 }
                 LoadListCategory();
             }
-
             else
             {
-                MessageBox.Show("Xóa không thành công.");
                 return;
             }
         }

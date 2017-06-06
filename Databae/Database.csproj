@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EF\DAO\CategoryDAO.cs" />
+    <Compile Include="EF\DAO\ProductDAO.cs" />
     <Compile Include="EF\DAO\UserDAO.cs" />
     <Compile Include="EF\DTO\Category.cs" />
     <Compile Include="EF\DTO\Order.cs" />
