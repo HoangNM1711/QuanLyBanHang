@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace Database.EF.DAO
 {
     public class CategoryDAO
@@ -77,16 +78,14 @@ namespace Database.EF.DAO
             }
         }
 
-        public List<Category> ListAllCategory()
+        public List<Category> ListCategoryByStatus()
         {
-            return db.Categories.OrderBy(x => x.ID).ToList();
+            return db.Categories.Where(x => x.Status == "Đang bán").OrderBy(x => x.ID).ToList();
         }
-
         public Category GetCategoryById(long id)
         {
             return db.Categories.SingleOrDefault(x => x.ID == id);
         }
-
         public IEnumerable<Category>SearchCategory(string searchString)
         {
             IQueryable<Category> cate = db.Categories;

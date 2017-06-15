@@ -70,7 +70,7 @@
             this.PasswordTxb.Name = "PasswordTxb";
             this.PasswordTxb.Size = new System.Drawing.Size(211, 29);
             this.PasswordTxb.TabIndex = 2;
-            this.PasswordTxb.Text = "Mật khẩu";
+            this.PasswordTxb.Text = "123";
             this.PasswordTxb.Enter += new System.EventHandler(this.PasswordTxb_GotFocus);
             this.PasswordTxb.Leave += new System.EventHandler(this.PasswordTxb_LostFocus);
             // 
@@ -81,7 +81,7 @@
             this.UsernameTxb.Name = "UsernameTxb";
             this.UsernameTxb.Size = new System.Drawing.Size(211, 29);
             this.UsernameTxb.TabIndex = 1;
-            this.UsernameTxb.Text = "Tên đăng nhập";
+            this.UsernameTxb.Text = "admin";
             this.UsernameTxb.Enter += new System.EventHandler(this.UsernameTxb_GotFocus);
             this.UsernameTxb.Leave += new System.EventHandler(this.UsernameTxb_LostFocus);
             // 

@@ -14,7 +14,7 @@ namespace QuanLyBanHang
 {
     public partial class fmCategory : MetroFramework.Forms.MetroForm
     {
-        BindingSource CategoryList = new BindingSource();
+        BindingSource CategoryBinding = new BindingSource();
         public fmCategory()
         {
             InitializeComponent();
@@ -25,13 +25,14 @@ namespace QuanLyBanHang
 
         void LoadComponent()
         {
-            LoadListCategory();
-            CategoryBinding();
+            LoadGridView();
+            AddBinding();
+            CustomCB();
         }
-        void LoadListCategory()
+        public void CustomGridView() // Thiết lập GridView
         {
-            CategoryGridView.DataSource = CategoryList;
-            CategoryList.DataSource = CategoryDAO.Instance.ListAllCategory();
+            CategoryGridView.DataSource = CategoryBinding;
+
             CategoryGridView.Columns[1].HeaderText = "Loại SP";
             CategoryGridView.Columns[2].HeaderText = "SL Tồn Kho";
             CategoryGridView.Columns[3].HeaderText = "SL Bán";
@@ -39,8 +40,17 @@ namespace QuanLyBanHang
             CategoryGridView.Columns[5].HeaderText = "Ngày Sửa";
             CategoryGridView.Columns[6].HeaderText = "Trạng Thái";
         }
-
-        void CategoryBinding()
+        public void LoadGridView() // Thiết lập dữ liệu GridView
+        {
+            CategoryBinding.DataSource = CategoryDAO.Instance.ListCategoryByStatus();
+            CustomGridView();
+        }        
+        public void CustomCB() // Tạo Value cho combobox status
+        {
+            cbStatus.Items.Add("Đang bán");
+            cbStatus.Items.Add("Ngưng bán");
+        }
+        public void AddBinding() // Binding Data
         {
             txbID.DataBindings.Add(new Binding("Text", CategoryGridView.DataSource, "ID", true, DataSourceUpdateMode.Never));
             txbCategoryName.DataBindings.Add(new Binding("Text", CategoryGridView.DataSource, "Name", true, DataSourceUpdateMode.Never));
@@ -49,7 +59,7 @@ namespace QuanLyBanHang
             cbStatus.DataBindings.Add(new Binding("Text", CategoryGridView.DataSource, "Status", true, DataSourceUpdateMode.Never));
         }
 
-        public bool CheckForm ()
+        public bool CheckForm () // Validate Form
         {
             errorProvider.Clear();
             if (String.IsNullOrWhiteSpace(txbCategoryName.Text))
@@ -58,35 +68,35 @@ namespace QuanLyBanHang
                 return false;
             }
 
-            if (numberStock.Value < numberSold.Value)
-            {
-                errorProvider.SetError(numberStock, "Số lượng hàng tồn không vượt quá số lượng bán ");
-                return false;
-            }
             return true;
+        }
+
+        public void LoadListByStatus() // Làm mới danh sách theo Status
+        {
+            CategoryBinding.DataSource = CategoryDAO.Instance.ListCategoryByStatus();
         }
         #endregion
 
         #region event
-        private void fmCategory_FormClosed(object sender, FormClosedEventArgs e)
+        private void fmCategory_FormClosed(object sender, FormClosedEventArgs e) // Đóng form
         {
             this.Hide();
         }
 
-        private const string txbcategoryfind = "Từ khóa tìm kiếm";
+        private const string find = "Từ khóa tìm kiếm" ; // Event cho textbox tìm kiếm
         private void txbCategoryFind_GotFocus(object sender, EventArgs e)
         {
-            txbCategoryFind.Text = txbCategoryFind.Text == txbcategoryfind ? string.Empty : txbCategoryFind.Text;
+            txbCategoryFind.Text = txbCategoryFind.Text == find ? string.Empty : txbCategoryFind.Text;
         }
 
         private void txbCategoryFind_LostFocus(object sender, EventArgs e)
         {
-            txbCategoryFind.Text = txbCategoryFind.Text == string.Empty ? txbcategoryfind : txbCategoryFind.Text;
+            txbCategoryFind.Text = txbCategoryFind.Text == string.Empty ? find : txbCategoryFind.Text;
         }
         #endregion
 
         #region button
-        private void btnCategoryAdd_Click(object sender, EventArgs e)
+        private void btnCategoryAdd_Click(object sender, EventArgs e) // Nút thêm
         {
             if (CheckForm())
             {
@@ -119,32 +129,41 @@ namespace QuanLyBanHang
             {
                 MessageBox.Show("Thêm sản phẩm không thành công");
             }
-            LoadListCategory();
+            LoadListByStatus();
         }
 
 
-        private void btnCategoryUpdate_Click(object sender, EventArgs e)
+        private void btnCategoryUpdate_Click(object sender, EventArgs e) // Nút Cập nhật
         {
             if (CheckForm())
             {
                 var category = CategoryDAO.Instance.GetCategoryById(long.Parse(txbID.Text));
-                category.Name = txbCategoryName.Text;
-                category.Stock = (int)numberStock.Value;
-                category.Sold = (int)numberSold.Value;
-                category.ModifiedDate = DateTime.Now;
-                if ((int)numberStock.Value == 0)
+                if (CategoryDAO.Instance.CheckCategory(txbCategoryName.Text) == 1)
                 {
-                    category.Status = "Hết hàng";
+                    category.Name = txbCategoryName.Text;
+                    category.Stock = (int)numberStock.Value;
+                    category.Sold = (int)numberSold.Value;
+                    category.Status = cbStatus.Text;
+                    category.ModifiedDate = DateTime.Now;
+
+                    var result = CategoryDAO.Instance.UpdateCategory(category);
+                    if (result)
+                    {
+                        MessageBox.Show("Cập nhật thành công.");
+                    }
                 }
                 else
                 {
+                    category.Stock = (int)numberStock.Value;
+                    category.Sold = (int)numberSold.Value;
                     category.Status = cbStatus.Text;
-                }
+                    category.ModifiedDate = DateTime.Now;
 
-                var result = CategoryDAO.Instance.UpdateCategory(category);
-                if (result)
-                {
-                    MessageBox.Show("Cập nhật thành công.");
+                    var result = CategoryDAO.Instance.UpdateCategory(category);
+                    if (result)
+                    {
+                        MessageBox.Show("Cập nhật thành công.");
+                    }
                 }
             }            
             else
@@ -152,9 +171,9 @@ namespace QuanLyBanHang
                 MessageBox.Show("Cập nhật không thành công.");
             }
 
-            LoadListCategory();
+            LoadListByStatus();
         }
-        private void btnCategoryDelete_Click(object sender, EventArgs e)
+        private void btnCategoryDelete_Click(object sender, EventArgs e) // Nút Xóa
         {
             DialogResult Delete = MessageBox.Show("Xác nhận Xóa", "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (Delete == DialogResult.OK)
@@ -165,22 +184,23 @@ namespace QuanLyBanHang
                 {
                     MessageBox.Show("Xóa thành công.");
                 }
-                LoadListCategory();
+                LoadListByStatus();
             }
             else
             {
                 return;
             }
         }
-        private void btnCategoryFind_Click(object sender, EventArgs e)
+        private void btnCategoryFind_Click(object sender, EventArgs e) // Nút tìm kiếm
         {
             var list = CategoryDAO.Instance.SearchCategory(txbCategoryFind.Text);
-            CategoryList.DataSource = list;
+            CategoryBinding.DataSource = list;
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void btnLoad_Click(object sender, EventArgs e) // Refresh dữ liệu
         {
-            CategoryGridView.DataSource = CategoryDAO.Instance.ListAllCategory();
+            ShopDbContext db = new ShopDbContext();
+            CategoryBinding.DataSource = db.Categories.ToList();
         }
         #endregion
     }

@@ -4,8 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyBanHang", "QuanLyBanHang\QuanLyBanHang.csproj", "{CAE62E60-D8DB-4F3B-8A9A-EACD1403D249}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EB868D18-1586-47B3-B847-94687560DACC} = {EB868D18-1586-47B3-B847-94687560DACC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Databae\Database.csproj", "{FF7755C6-D4D7-4DD0-8D48-B8161595A928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckConnectWCF", "CheckConnectWCF\CheckConnectWCF.csproj", "{EB868D18-1586-47B3-B847-94687560DACC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{FF7755C6-D4D7-4DD0-8D48-B8161595A928}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF7755C6-D4D7-4DD0-8D48-B8161595A928}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF7755C6-D4D7-4DD0-8D48-B8161595A928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB868D18-1586-47B3-B847-94687560DACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB868D18-1586-47B3-B847-94687560DACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB868D18-1586-47B3-B847-94687560DACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB868D18-1586-47B3-B847-94687560DACC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -61,6 +61,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -122,8 +124,19 @@
     <Compile Include="fmSupplier.Designer.cs">
       <DependentUpon>fmSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmWaiting.Designer.cs">
+      <DependentUpon>fmWaiting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WaitingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="fmCategory.resx">
       <DependentUpon>fmCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,11 +146,20 @@
     <EmbeddedResource Include="fmMain.resx">
       <DependentUpon>fmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fmOrder.resx">
+      <DependentUpon>fmOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fmProduct.resx">
       <DependentUpon>fmProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmRegister.resx">
       <DependentUpon>fmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmSupplier.resx">
+      <DependentUpon>fmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmWaiting.resx">
+      <DependentUpon>fmWaiting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -159,11 +181,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\WaitingService\service.wsdl" />
+    <None Include="Service References\WaitingService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WaitingService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CheckConnectWCF\CheckConnectWCF.csproj">
+      <Project>{eb868d18-1586-47b3-b847-94687560dacc}</Project>
+      <Name>CheckConnectWCF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Databae\Database.csproj">
       <Project>{ff7755c6-d4d7-4dd0-8d48-b8161595a928}</Project>
       <Name>Database</Name>
@@ -171,6 +204,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Background Software 3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WaitingService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WaitingService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WaitingService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WaitingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

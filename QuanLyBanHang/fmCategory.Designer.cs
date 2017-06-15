@@ -29,20 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.btnLoad = new MetroFramework.Controls.MetroButton();
             this.txbID = new System.Windows.Forms.TextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.cbStatus = new MetroFramework.Controls.MetroComboBox();
-            this.btnCategoryFind = new MetroFramework.Controls.MetroButton();
             this.txbCategoryFind = new System.Windows.Forms.TextBox();
-            this.btnCategoryUpdate = new MetroFramework.Controls.MetroButton();
-            this.btnCategoryDelete = new MetroFramework.Controls.MetroButton();
-            this.btnCategoryAdd = new MetroFramework.Controls.MetroButton();
             this.numberSold = new System.Windows.Forms.NumericUpDown();
             this.numberStock = new System.Windows.Forms.NumericUpDown();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -51,6 +46,11 @@
             this.txbCategoryName = new System.Windows.Forms.TextBox();
             this.CategoryPName = new MetroFramework.Controls.MetroLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnLoad = new MetroFramework.Controls.MetroButton();
+            this.btnCategoryFind = new MetroFramework.Controls.MetroButton();
+            this.btnCategoryUpdate = new MetroFramework.Controls.MetroButton();
+            this.btnCategoryDelete = new MetroFramework.Controls.MetroButton();
+            this.btnCategoryAdd = new MetroFramework.Controls.MetroButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
@@ -72,12 +72,13 @@
             this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.metroPanel1.Controls.Add(this.metroPanel3);
             this.metroPanel1.Controls.Add(this.textBox1);
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(75, 39);
+            this.metroPanel1.Location = new System.Drawing.Point(30, 88);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(554, 244);
+            this.metroPanel1.Size = new System.Drawing.Size(568, 244);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -87,14 +88,14 @@
             // 
             this.metroPanel3.BackColor = System.Drawing.Color.White;
             this.metroPanel3.Controls.Add(this.btnLoad);
+            this.metroPanel3.Controls.Add(this.btnCategoryDelete);
             this.metroPanel3.Controls.Add(this.txbID);
             this.metroPanel3.Controls.Add(this.metroLabel4);
+            this.metroPanel3.Controls.Add(this.btnCategoryUpdate);
+            this.metroPanel3.Controls.Add(this.btnCategoryAdd);
             this.metroPanel3.Controls.Add(this.cbStatus);
             this.metroPanel3.Controls.Add(this.btnCategoryFind);
             this.metroPanel3.Controls.Add(this.txbCategoryFind);
-            this.metroPanel3.Controls.Add(this.btnCategoryUpdate);
-            this.metroPanel3.Controls.Add(this.btnCategoryDelete);
-            this.metroPanel3.Controls.Add(this.btnCategoryAdd);
             this.metroPanel3.Controls.Add(this.numberSold);
             this.metroPanel3.Controls.Add(this.numberStock);
             this.metroPanel3.Controls.Add(this.metroLabel3);
@@ -102,34 +103,23 @@
             this.metroPanel3.Controls.Add(this.metroLabel1);
             this.metroPanel3.Controls.Add(this.txbCategoryName);
             this.metroPanel3.Controls.Add(this.CategoryPName);
+            this.metroPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroPanel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(3, 3);
+            this.metroPanel3.Location = new System.Drawing.Point(0, 0);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(546, 236);
+            this.metroPanel3.Size = new System.Drawing.Size(566, 243);
             this.metroPanel3.TabIndex = 3;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
-            // btnLoad
-            // 
-            this.btnLoad.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnLoad.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnLoad.Location = new System.Drawing.Point(390, 138);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(101, 39);
-            this.btnLoad.TabIndex = 16;
-            this.btnLoad.Text = "Xem";
-            this.btnLoad.UseSelectable = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
             // txbID
             // 
             this.txbID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbID.Location = new System.Drawing.Point(140, 28);
+            this.txbID.Location = new System.Drawing.Point(173, 31);
             this.txbID.Name = "txbID";
             this.txbID.ReadOnly = true;
             this.txbID.Size = new System.Drawing.Size(200, 26);
@@ -140,7 +130,7 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel4.Location = new System.Drawing.Point(103, 35);
+            this.metroLabel4.Location = new System.Drawing.Point(136, 38);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(31, 19);
             this.metroLabel4.TabIndex = 1;
@@ -151,78 +141,26 @@
             // 
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.ItemHeight = 23;
-            this.cbStatus.Items.AddRange(new object[] {
-            "Đang bán",
-            "Ngưng bán",
-            "Hết hàng"});
-            this.cbStatus.Location = new System.Drawing.Point(141, 163);
+            this.cbStatus.Location = new System.Drawing.Point(173, 164);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(198, 29);
             this.cbStatus.TabIndex = 10;
             this.cbStatus.UseSelectable = true;
-            // 
-            // btnCategoryFind
-            // 
-            this.btnCategoryFind.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnCategoryFind.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnCategoryFind.Location = new System.Drawing.Point(390, 183);
-            this.btnCategoryFind.Name = "btnCategoryFind";
-            this.btnCategoryFind.Size = new System.Drawing.Size(101, 42);
-            this.btnCategoryFind.TabIndex = 15;
-            this.btnCategoryFind.Text = "Tìm kiếm";
-            this.btnCategoryFind.UseSelectable = true;
-            this.btnCategoryFind.Click += new System.EventHandler(this.btnCategoryFind_Click);
             // 
             // txbCategoryFind
             // 
             this.txbCategoryFind.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCategoryFind.Location = new System.Drawing.Point(22, 198);
             this.txbCategoryFind.Name = "txbCategoryFind";
-            this.txbCategoryFind.Size = new System.Drawing.Size(318, 22);
+            this.txbCategoryFind.Size = new System.Drawing.Size(349, 22);
             this.txbCategoryFind.TabIndex = 14;
             this.txbCategoryFind.Text = "Từ khóa tìm kiếm";
             this.txbCategoryFind.Enter += new System.EventHandler(this.txbCategoryFind_GotFocus);
             this.txbCategoryFind.Leave += new System.EventHandler(this.txbCategoryFind_LostFocus);
             // 
-            // btnCategoryUpdate
-            // 
-            this.btnCategoryUpdate.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnCategoryUpdate.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnCategoryUpdate.Location = new System.Drawing.Point(390, 48);
-            this.btnCategoryUpdate.Name = "btnCategoryUpdate";
-            this.btnCategoryUpdate.Size = new System.Drawing.Size(101, 39);
-            this.btnCategoryUpdate.TabIndex = 12;
-            this.btnCategoryUpdate.Text = "Sửa";
-            this.btnCategoryUpdate.UseSelectable = true;
-            this.btnCategoryUpdate.Click += new System.EventHandler(this.btnCategoryUpdate_Click);
-            // 
-            // btnCategoryDelete
-            // 
-            this.btnCategoryDelete.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnCategoryDelete.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnCategoryDelete.Location = new System.Drawing.Point(390, 93);
-            this.btnCategoryDelete.Name = "btnCategoryDelete";
-            this.btnCategoryDelete.Size = new System.Drawing.Size(101, 39);
-            this.btnCategoryDelete.TabIndex = 13;
-            this.btnCategoryDelete.Text = "Xóa";
-            this.btnCategoryDelete.UseSelectable = true;
-            this.btnCategoryDelete.Click += new System.EventHandler(this.btnCategoryDelete_Click);
-            // 
-            // btnCategoryAdd
-            // 
-            this.btnCategoryAdd.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnCategoryAdd.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnCategoryAdd.Location = new System.Drawing.Point(390, 3);
-            this.btnCategoryAdd.Name = "btnCategoryAdd";
-            this.btnCategoryAdd.Size = new System.Drawing.Size(101, 39);
-            this.btnCategoryAdd.TabIndex = 11;
-            this.btnCategoryAdd.Text = "Thêm";
-            this.btnCategoryAdd.UseSelectable = true;
-            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
-            // 
             // numberSold
             // 
-            this.numberSold.Location = new System.Drawing.Point(141, 134);
+            this.numberSold.Location = new System.Drawing.Point(173, 131);
             this.numberSold.Maximum = new decimal(new int[] {
             500,
             0,
@@ -234,7 +172,7 @@
             // 
             // numberStock
             // 
-            this.numberStock.Location = new System.Drawing.Point(141, 100);
+            this.numberStock.Location = new System.Drawing.Point(173, 98);
             this.numberStock.Maximum = new decimal(new int[] {
             500,
             0,
@@ -249,7 +187,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel3.Location = new System.Drawing.Point(50, 166);
+            this.metroLabel3.Location = new System.Drawing.Point(82, 167);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(85, 19);
             this.metroLabel3.TabIndex = 9;
@@ -261,7 +199,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel2.Location = new System.Drawing.Point(74, 136);
+            this.metroLabel2.Location = new System.Drawing.Point(106, 133);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(61, 19);
             this.metroLabel2.TabIndex = 7;
@@ -273,7 +211,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel1.Location = new System.Drawing.Point(48, 104);
+            this.metroLabel1.Location = new System.Drawing.Point(80, 102);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(87, 19);
             this.metroLabel1.TabIndex = 5;
@@ -283,7 +221,7 @@
             // txbCategoryName
             // 
             this.txbCategoryName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCategoryName.Location = new System.Drawing.Point(141, 64);
+            this.txbCategoryName.Location = new System.Drawing.Point(173, 65);
             this.txbCategoryName.Name = "txbCategoryName";
             this.txbCategoryName.Size = new System.Drawing.Size(199, 26);
             this.txbCategoryName.TabIndex = 4;
@@ -293,7 +231,7 @@
             this.CategoryPName.AutoSize = true;
             this.CategoryPName.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.CategoryPName.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.CategoryPName.Location = new System.Drawing.Point(22, 63);
+            this.CategoryPName.Location = new System.Drawing.Point(54, 64);
             this.CategoryPName.Name = "CategoryPName";
             this.CategoryPName.Size = new System.Drawing.Size(113, 19);
             this.CategoryPName.TabIndex = 3;
@@ -307,12 +245,72 @@
             this.textBox1.Size = new System.Drawing.Size(159, 26);
             this.textBox1.TabIndex = 2;
             // 
+            // btnLoad
+            // 
+            this.btnLoad.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnLoad.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnLoad.Location = new System.Drawing.Point(423, 150);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(101, 39);
+            this.btnLoad.TabIndex = 16;
+            this.btnLoad.Text = "Xem";
+            this.btnLoad.UseSelectable = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // btnCategoryFind
+            // 
+            this.btnCategoryFind.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnCategoryFind.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCategoryFind.Location = new System.Drawing.Point(423, 195);
+            this.btnCategoryFind.Name = "btnCategoryFind";
+            this.btnCategoryFind.Size = new System.Drawing.Size(101, 42);
+            this.btnCategoryFind.TabIndex = 15;
+            this.btnCategoryFind.Text = "Tìm kiếm";
+            this.btnCategoryFind.UseSelectable = true;
+            this.btnCategoryFind.Click += new System.EventHandler(this.btnCategoryFind_Click);
+            // 
+            // btnCategoryUpdate
+            // 
+            this.btnCategoryUpdate.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnCategoryUpdate.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCategoryUpdate.Location = new System.Drawing.Point(423, 63);
+            this.btnCategoryUpdate.Name = "btnCategoryUpdate";
+            this.btnCategoryUpdate.Size = new System.Drawing.Size(101, 39);
+            this.btnCategoryUpdate.TabIndex = 12;
+            this.btnCategoryUpdate.Text = "Sửa";
+            this.btnCategoryUpdate.UseSelectable = true;
+            this.btnCategoryUpdate.Click += new System.EventHandler(this.btnCategoryUpdate_Click);
+            // 
+            // btnCategoryDelete
+            // 
+            this.btnCategoryDelete.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnCategoryDelete.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCategoryDelete.Location = new System.Drawing.Point(423, 106);
+            this.btnCategoryDelete.Name = "btnCategoryDelete";
+            this.btnCategoryDelete.Size = new System.Drawing.Size(101, 39);
+            this.btnCategoryDelete.TabIndex = 13;
+            this.btnCategoryDelete.Text = "Xóa";
+            this.btnCategoryDelete.UseSelectable = true;
+            this.btnCategoryDelete.Click += new System.EventHandler(this.btnCategoryDelete_Click);
+            // 
+            // btnCategoryAdd
+            // 
+            this.btnCategoryAdd.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnCategoryAdd.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCategoryAdd.Location = new System.Drawing.Point(423, 18);
+            this.btnCategoryAdd.Name = "btnCategoryAdd";
+            this.btnCategoryAdd.Size = new System.Drawing.Size(101, 39);
+            this.btnCategoryAdd.TabIndex = 11;
+            this.btnCategoryAdd.Text = "Thêm";
+            this.btnCategoryAdd.UseSelectable = true;
+            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Location = new System.Drawing.Point(231, 19);
+            this.panel1.Location = new System.Drawing.Point(202, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 40);
             this.panel1.TabIndex = 3;
@@ -333,12 +331,13 @@
             // metroPanel2
             // 
             this.metroPanel2.Controls.Add(this.CategoryGridView);
+            this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(75, 285);
+            this.metroPanel2.Location = new System.Drawing.Point(30, 332);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(554, 299);
+            this.metroPanel2.Size = new System.Drawing.Size(568, 299);
             this.metroPanel2.TabIndex = 4;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
@@ -347,34 +346,35 @@
             // CategoryGridView
             // 
             this.CategoryGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CategoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.CategoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CategoryGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CategoryGridView.Location = new System.Drawing.Point(3, 4);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CategoryGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            this.CategoryGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CategoryGridView.Location = new System.Drawing.Point(0, 0);
             this.CategoryGridView.Name = "CategoryGridView";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.CategoryGridView.Size = new System.Drawing.Size(547, 292);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CategoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.CategoryGridView.Size = new System.Drawing.Size(568, 292);
             this.CategoryGridView.TabIndex = 2;
             // 
             // errorProvider
@@ -385,7 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 634);
+            this.ClientSize = new System.Drawing.Size(628, 635);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.metroPanel1);

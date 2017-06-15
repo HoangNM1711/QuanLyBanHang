@@ -36,14 +36,50 @@ namespace Database.EF.DAO
         {
             db.Products.Add(product);
             db.SaveChanges();
-            return product.CategoryID;
+            return product.ID;
         }
 
-        public List<Product> ListAllProduct ()
+        public bool UpdateProduct(Product product)
         {
-            return db.Products.OrderBy(x => x.ID).ToList();
-        }
+            try
+            {
+                var pro = new Product();
+                pro.Name = product.Name;
+                pro.Stock = product.Stock;
+                pro.Price = product.Price;
+                pro.Sold = product.Sold;
+                pro.ModifiedDate = product.ModifiedDate;
+                pro.Status = product.Status;
+                pro.CategoryID = product.CategoryID;
+                pro.SupplierID = product.SupplierID;
 
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public bool DeleteProduct(long id)
+        {
+            try
+            {
+                var product = db.Products.Find(id);
+                db.Products.Remove(product);
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public List<Product> ListProductByStatus()
+        {
+            return db.Products.Where(x => x.Status == "Đang bán").OrderBy(x => x.ID).ToList();
+        }
         public Product GetProductById (long id)
         {
             return db.Products.SingleOrDefault(x => x.ID == id);
@@ -59,5 +95,6 @@ namespace Database.EF.DAO
             else
                 return 0;
         }
+
     }
 }

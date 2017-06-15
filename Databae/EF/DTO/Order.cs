@@ -26,5 +26,8 @@ namespace Database.EF.DTO
         public DateTime? CreatedDate { get; set; }
 
         public DateTime? ModifiedDate { get; set; }
+
+        [StringLength(50)]
+        public string Status { get; set; }
     }
 }

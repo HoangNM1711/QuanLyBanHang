@@ -33,6 +33,7 @@
             this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.hệThốngToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinTàiKhoảnToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoatToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýDữLiệuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.loạiSảnPhẩmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,6 +85,7 @@
             // 
             this.hệThốngToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinTàiKhoảnToolStripMenuItem1,
+            this.đăngXuấtToolStripMenuItem,
             this.thoatToolStripMenuItem1});
             this.hệThốngToolStripMenuItem1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hệThốngToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
@@ -97,6 +99,14 @@
             this.thôngTinTàiKhoảnToolStripMenuItem1.Name = "thôngTinTàiKhoảnToolStripMenuItem1";
             this.thôngTinTàiKhoảnToolStripMenuItem1.Size = new System.Drawing.Size(220, 24);
             this.thôngTinTàiKhoảnToolStripMenuItem1.Text = "Thông Tin Tài Khoản";
+            // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // thoatToolStripMenuItem1
             // 
@@ -133,7 +143,7 @@
             this.nhàCungCấpToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.nhàCungCấpToolStripMenuItem1.Name = "nhàCungCấpToolStripMenuItem1";
             this.nhàCungCấpToolStripMenuItem1.Size = new System.Drawing.Size(205, 24);
-            this.nhàCungCấpToolStripMenuItem1.Text = "Nhà Cung Cấp";
+            this.nhàCungCấpToolStripMenuItem1.Text = "Hãng Sản Xuất";
             this.nhàCungCấpToolStripMenuItem1.Click += new System.EventHandler(this.nhàCungCấpToolStripMenuItem_Click);
             // 
             // sảnPhẩmToolStripMenuItem1
@@ -221,5 +231,6 @@
         private System.Windows.Forms.ToolStripMenuItem chiTiếtĐơnHàngToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem doanhSốToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem kiểmTraHàngTồnToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using CheckConnectWCF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +16,7 @@ namespace QuanLyBanHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fmLogin());
+            Application.Run(new fmMain());
         }
     }
 }

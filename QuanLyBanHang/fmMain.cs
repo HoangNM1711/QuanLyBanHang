@@ -15,6 +15,7 @@ namespace QuanLyBanHang
         public fmMain()
         {
             InitializeComponent();
+            
         }
 
         private void thoatToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,30 +32,37 @@ namespace QuanLyBanHang
         private void loạiSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fmCategory fm = new fmCategory();
-            fm.ShowDialog();
+            fm.Show();
         }
 
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fmProduct fm = new fmProduct();
-            fm.ShowDialog();
+            fm.Show();
         }
         private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fmSupplier fm = new fmSupplier();
-            fm.ShowDialog();
+            fm.Show();
         }
 
         private void đơnHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fmOrder fm = new fmOrder();
-            fm.ShowDialog();
+            fm.Show();
         }
 
         private void chiTiếtĐơnHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fmOrderDetail fm = new fmOrderDetail();
-            fm.ShowDialog();
+            fm.Show();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fmLogin fm = new fmLogin();
+            fm.Show();
         }
     }
 }
