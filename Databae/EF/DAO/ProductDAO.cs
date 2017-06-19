@@ -95,6 +95,14 @@ namespace Database.EF.DAO
             else
                 return 0;
         }
-
+        public IEnumerable<Product> SearchProduct(string searchString) //Tìm kiếm
+        {
+            IQueryable<Product> product = db.Products;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                product = product.Where(x => x.Name.Contains(searchString) || x.Status.Contains(searchString));
+            }
+            return product.OrderByDescending(x => x.CreatedDate).ToList();
+        }
     }
 }

@@ -9,7 +9,6 @@ namespace Database.EF.DTO
     [Table("OrderDetail")]
     public partial class OrderDetail
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long ID { get; set; }
 
         public long ProductID { get; set; }
@@ -19,11 +18,6 @@ namespace Database.EF.DTO
         public int? Quantity { get; set; }
 
         public decimal? Price { get; set; }
-
-        public decimal? Total { get; set; }
-
-        [StringLength(50)]
-        public string Status { get; set; }
 
         public DateTime? CreatedDate { get; set; }
 

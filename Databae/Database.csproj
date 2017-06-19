@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="EF\DAO\CategoryDAO.cs" />
     <Compile Include="EF\DAO\OrderDAO.cs" />
+    <Compile Include="EF\DAO\OrderDetailDAO.cs" />
     <Compile Include="EF\DAO\ProductDAO.cs" />
     <Compile Include="EF\DAO\SupplierDAO.cs" />
     <Compile Include="EF\DAO\UserDAO.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="EF\DTO\OrderDetail.cs" />
     <Compile Include="EF\DTO\Product.cs" />
     <Compile Include="EF\DTO\ShopDbContext.cs" />
+    <Compile Include="EF\DTO\Status.cs" />
     <Compile Include="EF\DTO\Supplier.cs" />
     <Compile Include="EF\DTO\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

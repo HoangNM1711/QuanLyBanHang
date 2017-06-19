@@ -174,6 +174,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "fmLogin";
             this.Padding = new System.Windows.Forms.Padding(20, 65, 20, 22);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fmLogin_FormClosed);
             this.mLoginPanel.ResumeLayout(false);
             this.mLoginPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

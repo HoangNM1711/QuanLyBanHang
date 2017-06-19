@@ -149,6 +149,9 @@
     <EmbeddedResource Include="fmOrder.resx">
       <DependentUpon>fmOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fmOrderDetail.resx">
+      <DependentUpon>fmOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fmProduct.resx">
       <DependentUpon>fmProduct.cs</DependentUpon>
     </EmbeddedResource>

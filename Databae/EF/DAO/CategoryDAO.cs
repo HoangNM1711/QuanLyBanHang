@@ -91,7 +91,7 @@ namespace Database.EF.DAO
             IQueryable<Category> cate = db.Categories;
             if (!string.IsNullOrEmpty(searchString))
             {
-                cate = cate.Where(x => x.Name.Contains(searchString));
+                cate = cate.Where(x => x.Name.Contains(searchString) || x.Status.Contains(searchString));
             }
             return cate.OrderByDescending(x => x.CreatedDate).ToList();
         }

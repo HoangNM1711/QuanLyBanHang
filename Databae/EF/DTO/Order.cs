@@ -23,6 +23,8 @@ namespace Database.EF.DTO
         [StringLength(50)]
         public string CustomerEmail { get; set; }
 
+        public decimal TotalPrice { get; set; }
+
         public DateTime? CreatedDate { get; set; }
 
         public DateTime? ModifiedDate { get; set; }

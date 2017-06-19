@@ -18,7 +18,6 @@ namespace QuanLyBanHang
         public fmSupplier()
         {
             InitializeComponent();
-            LoadComponent();
         }
 
         #region  method
@@ -26,7 +25,7 @@ namespace QuanLyBanHang
         {
             LoadGridView();
             AddBinding();
-            CustomCB();
+            CBStatus();
         }
         public void LoadGridView()
         {
@@ -46,10 +45,12 @@ namespace QuanLyBanHang
             SupplierGridView.Columns[6].HeaderText = "Trạng Thái";
         }
 
-        public void CustomCB()
+        public void CBStatus()
         {
-            cbStatus.Items.Add("Đang hoạt động");
-            cbStatus.Items.Add("Ngưng hoạt động");
+            ShopDbContext db = new ShopDbContext();
+
+            cbStatus.DataSource = db.Status.Where(x => x.ID == 4 || x.ID == 5).Select(x => x.Status1).ToList();
+            cbStatus.DisplayMember = "Status";
         }
         public bool CheckForm()
         {
@@ -83,7 +84,10 @@ namespace QuanLyBanHang
 
 
         #region event
-
+        private void fmSupplier_Load(object sender, EventArgs e)
+        {
+            LoadComponent();
+        }
         private const string find = "Từ khóa tìm kiếm";
         private void fmSupplier_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -187,7 +191,6 @@ namespace QuanLyBanHang
             DialogResult Delete = MessageBox.Show("Xác nhận Xóa", "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (Delete == DialogResult.OK)
             {
-                var supplier = SupplierDAO.Instance.GetSupplierById(long.Parse(txbID.Text));
                 var result = SupplierDAO.Instance.DeleteSupplier(long.Parse(txbID.Text));
                 if (result)
                 {
@@ -204,10 +207,11 @@ namespace QuanLyBanHang
         private void btnSupplierFind_Click(object sender, EventArgs e)
         {
            var list = SupplierDAO.Instance.SearchSupplier(txbFindSupplier.Text);
-            SupplierBinding.DataSource = list;
+           SupplierBinding.DataSource = list;
         }
 
         #endregion
+
 
     }
 }

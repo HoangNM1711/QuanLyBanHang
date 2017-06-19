@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnLoadProduct = new MetroFramework.Controls.MetroButton();
@@ -76,34 +76,34 @@
             // dgvProduct
             // 
             this.dgvProduct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProduct.Location = new System.Drawing.Point(0, 0);
             this.dgvProduct.Name = "dgvProduct";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProduct.Size = new System.Drawing.Size(596, 299);
             this.dgvProduct.TabIndex = 2;
             // 
@@ -157,10 +157,10 @@
             // 
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.ItemHeight = 23;
-            this.cbStatus.Location = new System.Drawing.Point(114, 161);
+            this.cbStatus.Location = new System.Drawing.Point(423, 152);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(160, 29);
-            this.cbStatus.TabIndex = 7;
+            this.cbStatus.Size = new System.Drawing.Size(162, 29);
+            this.cbStatus.TabIndex = 8;
             this.cbStatus.UseSelectable = true;
             // 
             // btnProductFind
@@ -173,6 +173,7 @@
             this.btnProductFind.TabIndex = 14;
             this.btnProductFind.Text = "Tìm kiếm";
             this.btnProductFind.UseSelectable = true;
+            this.btnProductFind.Click += new System.EventHandler(this.btnProductFind_Click);
             // 
             // txbProductFind
             // 
@@ -182,6 +183,8 @@
             this.txbProductFind.Size = new System.Drawing.Size(413, 22);
             this.txbProductFind.TabIndex = 13;
             this.txbProductFind.Text = "Từ khóa tìm kiếm";
+            this.txbProductFind.GotFocus += new System.EventHandler(this.txbProductFind_GotFocus);
+            this.txbProductFind.LostFocus += new System.EventHandler(this.txbProductFind_LostFocus);
             // 
             // btnProductUpdate
             // 
@@ -364,7 +367,7 @@
             this.cbSupplierId.Location = new System.Drawing.Point(424, 116);
             this.cbSupplierId.Name = "cbSupplierId";
             this.cbSupplierId.Size = new System.Drawing.Size(161, 29);
-            this.cbSupplierId.TabIndex = 16;
+            this.cbSupplierId.TabIndex = 6;
             this.cbSupplierId.UseSelectable = true;
             // 
             // cbCateID
@@ -374,7 +377,7 @@
             this.cbCateID.Location = new System.Drawing.Point(114, 116);
             this.cbCateID.Name = "cbCateID";
             this.cbCateID.Size = new System.Drawing.Size(160, 29);
-            this.cbCateID.TabIndex = 15;
+            this.cbCateID.TabIndex = 5;
             this.cbCateID.UseSelectable = true;
             // 
             // metroLabel7
@@ -403,7 +406,7 @@
             // 
             // nbPrice
             // 
-            this.nbPrice.Location = new System.Drawing.Point(424, 161);
+            this.nbPrice.Location = new System.Drawing.Point(115, 159);
             this.nbPrice.Maximum = new decimal(new int[] {
             2000000000,
             0,
@@ -411,14 +414,14 @@
             0});
             this.nbPrice.Name = "nbPrice";
             this.nbPrice.Size = new System.Drawing.Size(161, 26);
-            this.nbPrice.TabIndex = 8;
+            this.nbPrice.TabIndex = 7;
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel5.Location = new System.Drawing.Point(379, 164);
+            this.metroLabel5.Location = new System.Drawing.Point(70, 162);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(39, 19);
             this.metroLabel5.TabIndex = 8;
@@ -430,7 +433,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel3.Location = new System.Drawing.Point(24, 168);
+            this.metroLabel3.Location = new System.Drawing.Point(333, 159);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(85, 19);
             this.metroLabel3.TabIndex = 7;
@@ -469,6 +472,7 @@
             this.Controls.Add(this.metroPanel1);
             this.Name = "fmProduct";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fmProduct_FormClosed);
+            this.Load += new System.EventHandler(this.fmProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

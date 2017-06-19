@@ -18,7 +18,6 @@ namespace QuanLyBanHang
         public fmCategory()
         {
             InitializeComponent();
-            LoadComponent();
         }
 
         #region method
@@ -27,7 +26,7 @@ namespace QuanLyBanHang
         {
             LoadGridView();
             AddBinding();
-            CustomCB();
+            CBStatus();
         }
         public void CustomGridView() // Thiết lập GridView
         {
@@ -45,10 +44,12 @@ namespace QuanLyBanHang
             CategoryBinding.DataSource = CategoryDAO.Instance.ListCategoryByStatus();
             CustomGridView();
         }        
-        public void CustomCB() // Tạo Value cho combobox status
+        public void CBStatus() // Tạo Value cho combobox status
         {
-            cbStatus.Items.Add("Đang bán");
-            cbStatus.Items.Add("Ngưng bán");
+            ShopDbContext db = new ShopDbContext();
+
+            cbStatus.DataSource = db.Status.Where(x => x.ID == 1 || x.ID == 2 || x.ID == 3).Select(x => x.Status1).ToList();
+            cbStatus.DisplayMember = "Status";
         }
         public void AddBinding() // Binding Data
         {
@@ -78,6 +79,10 @@ namespace QuanLyBanHang
         #endregion
 
         #region event
+        private void fmCategory_Load(object sender, EventArgs e)
+        {
+            LoadComponent();
+        }
         private void fmCategory_FormClosed(object sender, FormClosedEventArgs e) // Đóng form
         {
             this.Hide();
@@ -203,5 +208,7 @@ namespace QuanLyBanHang
             CategoryBinding.DataSource = db.Categories.ToList();
         }
         #endregion
+
+
     }
 }

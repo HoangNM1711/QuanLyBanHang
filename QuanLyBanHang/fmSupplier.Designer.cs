@@ -394,6 +394,7 @@
             this.Controls.Add(this.metroPanel1);
             this.Name = "fmSupplier";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fmSupplier_FormClosed);
+            this.Load += new System.EventHandler(this.fmSupplier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SupplierGridView)).EndInit();

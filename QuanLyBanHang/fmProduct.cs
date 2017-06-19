@@ -20,7 +20,7 @@ namespace QuanLyBanHang
         public fmProduct()
         {
             InitializeComponent();
-            LoadComponent();
+
         }
         #region method
 
@@ -57,6 +57,7 @@ namespace QuanLyBanHang
             txbProductName.DataBindings.Add(new Binding("Text", dgvProduct.DataSource, "Name", true, DataSourceUpdateMode.Never));
             numberStock.DataBindings.Add(new Binding("Value", dgvProduct.DataSource, "Stock", true, DataSourceUpdateMode.Never));
             numberSold.DataBindings.Add(new Binding("Value", dgvProduct.DataSource, "Sold", true, DataSourceUpdateMode.Never));
+            nbPrice.DataBindings.Add(new Binding("Value", dgvProduct.DataSource, "Price", true, DataSourceUpdateMode.Never));
             cbCateID.DataBindings.Add(new Binding("SelectedValue", dgvProduct.DataSource, "CategoryID", true, DataSourceUpdateMode.Never));
             cbSupplierId.DataBindings.Add(new Binding("SelectedValue", dgvProduct.DataSource, "SupplierID", true, DataSourceUpdateMode.Never));
             cbStatus.DataBindings.Add(new Binding("Text", dgvProduct.DataSource, "Status", true, DataSourceUpdateMode.Never));
@@ -69,9 +70,10 @@ namespace QuanLyBanHang
         public void LoadCB()
         {
             // cb Trạng thái
-            cbStatus.Items.Add("Đang bán");
-            cbStatus.Items.Add("Ngưng bán");
-            cbStatus.Items.Add("Hết hàng");
+            ShopDbContext db = new ShopDbContext();
+
+            cbStatus.DataSource = db.Status.Where(x => x.ID == 1 || x.ID == 2 || x.ID == 3).Select(x => x.Status1).ToList();
+            cbStatus.DisplayMember = "Status";
 
             CBCategoryID(); // Combo box category id
 
@@ -82,8 +84,6 @@ namespace QuanLyBanHang
 
         public void CBCategoryID()
         {
-            ShopDbContext db = new ShopDbContext();
-
             cbCateID.DataSource = CategoryDAO.Instance.ListCategoryByStatus();
             cbCateID.DisplayMember = "Name";
             cbCateID.ValueMember = "ID";
@@ -91,14 +91,12 @@ namespace QuanLyBanHang
 
         public void CBSupplierID()
         {
-            ShopDbContext db = new ShopDbContext();
-
             cbSupplierId.DataSource = SupplierDAO.Instance.ListSupplierByStatus();
             cbSupplierId.DisplayMember = "Name";
             cbSupplierId.ValueMember = "ID";
         }
 
-        public bool CheckForm()
+        public bool CheckForm() // validate form
         {
             errorProvider.Clear();
             if (String.IsNullOrWhiteSpace(txbProductName.Text))
@@ -129,9 +127,24 @@ namespace QuanLyBanHang
         #endregion
 
         #region event
+        private void fmProduct_Load(object sender, EventArgs e)
+        {
+            LoadComponent();
+        }
         private void fmProduct_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
+        }
+
+        private const string find = "Từ khóa tìm kiếm";
+        private void txbProductFind_GotFocus(object sender, EventArgs e)
+        {
+            txbProductFind.Text = txbProductFind.Text == find ? string.Empty : txbProductFind.Text;
+        }
+
+        private void txbProductFind_LostFocus(object sender, EventArgs e)
+        {
+            txbProductFind.Text = txbProductFind.Text == string.Empty ? find : txbProductFind.Text;
         }
 
         #endregion
@@ -151,8 +164,8 @@ namespace QuanLyBanHang
                     product.Stock = (int)numberStock.Value;
                     product.Sold = (int)numberSold.Value;
                     product.Price = nbPrice.Value;
-                    product.CategoryID = long.Parse(cbCateID.Text);
-                    product.SupplierID = long.Parse(cbSupplierId.Text);
+                    product.CategoryID = long.Parse(cbCateID.SelectedValue.ToString());
+                    product.SupplierID = long.Parse(cbSupplierId.SelectedValue.ToString());
                     product.CreatedDate = DateTime.Now;
                     if ((int)numberStock.Value == 0)
                     {
@@ -225,7 +238,6 @@ namespace QuanLyBanHang
             DialogResult Delete = MessageBox.Show("Xác nhận Xóa", "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (Delete == DialogResult.OK)
             {
-                var product = ProductDAO.Instance.GetProductById(long.Parse(txbID.Text));
                 var result = ProductDAO.Instance.DeleteProduct(long.Parse(txbID.Text));
                 if (result)
                 {
@@ -245,9 +257,15 @@ namespace QuanLyBanHang
             ProductBinding.DataSource = db.Products.ToList();
         }
 
+        private void btnProductFind_Click(object sender, EventArgs e)
+        {
+            var list = ProductDAO.Instance.SearchProduct(txbProductFind.Text);
+            ProductBinding.DataSource = list;
+        }
+
+
 
         #endregion
-
 
     }
 }

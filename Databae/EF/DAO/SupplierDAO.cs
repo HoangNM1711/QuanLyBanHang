@@ -98,7 +98,7 @@ namespace Database.EF.DAO
             IQueryable<Supplier> supplier = db.Suppliers;
             if (!string.IsNullOrEmpty(searchString))
             {
-                supplier = supplier.Where(x => x.Name.Contains(searchString));
+                supplier = supplier.Where(x => x.Name.Contains(searchString) || x.Status.Contains(searchString));
             }
             return supplier.OrderByDescending(x => x.CreatedDate).ToList();
         }

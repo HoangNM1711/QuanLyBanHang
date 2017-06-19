@@ -29,14 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.btnLoad = new MetroFramework.Controls.MetroButton();
+            this.btnCategoryDelete = new MetroFramework.Controls.MetroButton();
             this.txbID = new System.Windows.Forms.TextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.btnCategoryUpdate = new MetroFramework.Controls.MetroButton();
+            this.btnCategoryAdd = new MetroFramework.Controls.MetroButton();
             this.cbStatus = new MetroFramework.Controls.MetroComboBox();
+            this.btnCategoryFind = new MetroFramework.Controls.MetroButton();
             this.txbCategoryFind = new System.Windows.Forms.TextBox();
             this.numberSold = new System.Windows.Forms.NumericUpDown();
             this.numberStock = new System.Windows.Forms.NumericUpDown();
@@ -46,11 +51,6 @@
             this.txbCategoryName = new System.Windows.Forms.TextBox();
             this.CategoryPName = new MetroFramework.Controls.MetroLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnLoad = new MetroFramework.Controls.MetroButton();
-            this.btnCategoryFind = new MetroFramework.Controls.MetroButton();
-            this.btnCategoryUpdate = new MetroFramework.Controls.MetroButton();
-            this.btnCategoryDelete = new MetroFramework.Controls.MetroButton();
-            this.btnCategoryAdd = new MetroFramework.Controls.MetroButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
@@ -116,6 +116,30 @@
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
+            // btnLoad
+            // 
+            this.btnLoad.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnLoad.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnLoad.Location = new System.Drawing.Point(423, 150);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(101, 39);
+            this.btnLoad.TabIndex = 16;
+            this.btnLoad.Text = "Xem";
+            this.btnLoad.UseSelectable = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // btnCategoryDelete
+            // 
+            this.btnCategoryDelete.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnCategoryDelete.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCategoryDelete.Location = new System.Drawing.Point(423, 106);
+            this.btnCategoryDelete.Name = "btnCategoryDelete";
+            this.btnCategoryDelete.Size = new System.Drawing.Size(101, 39);
+            this.btnCategoryDelete.TabIndex = 13;
+            this.btnCategoryDelete.Text = "Xóa";
+            this.btnCategoryDelete.UseSelectable = true;
+            this.btnCategoryDelete.Click += new System.EventHandler(this.btnCategoryDelete_Click);
+            // 
             // txbID
             // 
             this.txbID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -137,6 +161,30 @@
             this.metroLabel4.Text = "ID :";
             this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCategoryUpdate
+            // 
+            this.btnCategoryUpdate.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnCategoryUpdate.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCategoryUpdate.Location = new System.Drawing.Point(423, 63);
+            this.btnCategoryUpdate.Name = "btnCategoryUpdate";
+            this.btnCategoryUpdate.Size = new System.Drawing.Size(101, 39);
+            this.btnCategoryUpdate.TabIndex = 12;
+            this.btnCategoryUpdate.Text = "Sửa";
+            this.btnCategoryUpdate.UseSelectable = true;
+            this.btnCategoryUpdate.Click += new System.EventHandler(this.btnCategoryUpdate_Click);
+            // 
+            // btnCategoryAdd
+            // 
+            this.btnCategoryAdd.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnCategoryAdd.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCategoryAdd.Location = new System.Drawing.Point(423, 18);
+            this.btnCategoryAdd.Name = "btnCategoryAdd";
+            this.btnCategoryAdd.Size = new System.Drawing.Size(101, 39);
+            this.btnCategoryAdd.TabIndex = 11;
+            this.btnCategoryAdd.Text = "Thêm";
+            this.btnCategoryAdd.UseSelectable = true;
+            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
+            // 
             // cbStatus
             // 
             this.cbStatus.FormattingEnabled = true;
@@ -146,6 +194,18 @@
             this.cbStatus.Size = new System.Drawing.Size(198, 29);
             this.cbStatus.TabIndex = 10;
             this.cbStatus.UseSelectable = true;
+            // 
+            // btnCategoryFind
+            // 
+            this.btnCategoryFind.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnCategoryFind.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCategoryFind.Location = new System.Drawing.Point(423, 195);
+            this.btnCategoryFind.Name = "btnCategoryFind";
+            this.btnCategoryFind.Size = new System.Drawing.Size(101, 42);
+            this.btnCategoryFind.TabIndex = 15;
+            this.btnCategoryFind.Text = "Tìm kiếm";
+            this.btnCategoryFind.UseSelectable = true;
+            this.btnCategoryFind.Click += new System.EventHandler(this.btnCategoryFind_Click);
             // 
             // txbCategoryFind
             // 
@@ -245,66 +305,6 @@
             this.textBox1.Size = new System.Drawing.Size(159, 26);
             this.textBox1.TabIndex = 2;
             // 
-            // btnLoad
-            // 
-            this.btnLoad.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnLoad.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnLoad.Location = new System.Drawing.Point(423, 150);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(101, 39);
-            this.btnLoad.TabIndex = 16;
-            this.btnLoad.Text = "Xem";
-            this.btnLoad.UseSelectable = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // btnCategoryFind
-            // 
-            this.btnCategoryFind.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnCategoryFind.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnCategoryFind.Location = new System.Drawing.Point(423, 195);
-            this.btnCategoryFind.Name = "btnCategoryFind";
-            this.btnCategoryFind.Size = new System.Drawing.Size(101, 42);
-            this.btnCategoryFind.TabIndex = 15;
-            this.btnCategoryFind.Text = "Tìm kiếm";
-            this.btnCategoryFind.UseSelectable = true;
-            this.btnCategoryFind.Click += new System.EventHandler(this.btnCategoryFind_Click);
-            // 
-            // btnCategoryUpdate
-            // 
-            this.btnCategoryUpdate.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnCategoryUpdate.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnCategoryUpdate.Location = new System.Drawing.Point(423, 63);
-            this.btnCategoryUpdate.Name = "btnCategoryUpdate";
-            this.btnCategoryUpdate.Size = new System.Drawing.Size(101, 39);
-            this.btnCategoryUpdate.TabIndex = 12;
-            this.btnCategoryUpdate.Text = "Sửa";
-            this.btnCategoryUpdate.UseSelectable = true;
-            this.btnCategoryUpdate.Click += new System.EventHandler(this.btnCategoryUpdate_Click);
-            // 
-            // btnCategoryDelete
-            // 
-            this.btnCategoryDelete.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnCategoryDelete.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnCategoryDelete.Location = new System.Drawing.Point(423, 106);
-            this.btnCategoryDelete.Name = "btnCategoryDelete";
-            this.btnCategoryDelete.Size = new System.Drawing.Size(101, 39);
-            this.btnCategoryDelete.TabIndex = 13;
-            this.btnCategoryDelete.Text = "Xóa";
-            this.btnCategoryDelete.UseSelectable = true;
-            this.btnCategoryDelete.Click += new System.EventHandler(this.btnCategoryDelete_Click);
-            // 
-            // btnCategoryAdd
-            // 
-            this.btnCategoryAdd.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnCategoryAdd.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnCategoryAdd.Location = new System.Drawing.Point(423, 18);
-            this.btnCategoryAdd.Name = "btnCategoryAdd";
-            this.btnCategoryAdd.Size = new System.Drawing.Size(101, 39);
-            this.btnCategoryAdd.TabIndex = 11;
-            this.btnCategoryAdd.Text = "Thêm";
-            this.btnCategoryAdd.UseSelectable = true;
-            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
@@ -346,34 +346,34 @@
             // CategoryGridView
             // 
             this.CategoryGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CategoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.CategoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CategoryGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CategoryGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.CategoryGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.CategoryGridView.Location = new System.Drawing.Point(0, 0);
             this.CategoryGridView.Name = "CategoryGridView";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CategoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.CategoryGridView.Size = new System.Drawing.Size(568, 292);
             this.CategoryGridView.TabIndex = 2;
             // 
@@ -395,6 +395,7 @@
             this.Padding = new System.Windows.Forms.Padding(30, 88, 30, 29);
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fmCategory_FormClosed);
+            this.Load += new System.EventHandler(this.fmCategory_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
