@@ -30,21 +30,34 @@ namespace QuanLyBanHang
         }
         public void CustomGridView() // Thiết lập GridView
         {
-            CategoryGridView.DataSource = CategoryBinding;
+            dgvCategory.DataSource = CategoryBinding;
 
-            CategoryGridView.Columns[1].HeaderText = "Loại SP";
-            CategoryGridView.Columns[2].HeaderText = "SL Tồn Kho";
-            CategoryGridView.Columns[3].HeaderText = "SL Bán";
-            CategoryGridView.Columns[4].HeaderText = "Ngày Tạo";
-            CategoryGridView.Columns[5].HeaderText = "Ngày Sửa";
-            CategoryGridView.Columns[6].HeaderText = "Trạng Thái";
+            dgvCategory.Columns[1].HeaderText = "Loại SP";
+            dgvCategory.Columns[2].HeaderText = "SL còn";
+            dgvCategory.Columns[3].HeaderText = "SL bán";
+            dgvCategory.Columns[4].HeaderText = "Ngày tạo";
+            dgvCategory.Columns[5].HeaderText = "Ngày cập nhật";
+            dgvCategory.Columns[6].HeaderText = "Trạng thái";
+
+            dgvCategory.Columns[0].Width = 40;
+            dgvCategory.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvCategory.Columns[2].Width = 50;
+            dgvCategory.Columns[3].Width = 50;
+            dgvCategory.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvCategory.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvCategory.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            if (dgvCategory.Rows.Count > 0)
+            {
+                dgvCategory.Rows[0].Selected = true;
+            }
         }
         public void LoadGridView() // Thiết lập dữ liệu GridView
         {
             CategoryBinding.DataSource = CategoryDAO.Instance.ListCategoryByStatus();
             CustomGridView();
-        }        
-        public void CBStatus() // Tạo Value cho combobox status
+        }
+        public void CBStatus() // load dữ liệu cho combobox status
         {
             ShopDbContext db = new ShopDbContext();
 
@@ -53,14 +66,14 @@ namespace QuanLyBanHang
         }
         public void AddBinding() // Binding Data
         {
-            txbID.DataBindings.Add(new Binding("Text", CategoryGridView.DataSource, "ID", true, DataSourceUpdateMode.Never));
-            txbCategoryName.DataBindings.Add(new Binding("Text", CategoryGridView.DataSource, "Name", true, DataSourceUpdateMode.Never));
-            numberStock.DataBindings.Add(new Binding("Value", CategoryGridView.DataSource, "Stock", true, DataSourceUpdateMode.Never));
-            numberSold.DataBindings.Add(new Binding("Value", CategoryGridView.DataSource, "Sold", true, DataSourceUpdateMode.Never));
-            cbStatus.DataBindings.Add(new Binding("Text", CategoryGridView.DataSource, "Status", true, DataSourceUpdateMode.Never));
+            txbID.DataBindings.Add(new Binding("Text", dgvCategory.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            txbCategoryName.DataBindings.Add(new Binding("Text", dgvCategory.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            txbStock.DataBindings.Add(new Binding("Text", dgvCategory.DataSource, "Stock", true, DataSourceUpdateMode.Never));
+            txbSold.DataBindings.Add(new Binding("Text", dgvCategory.DataSource, "Sold", true, DataSourceUpdateMode.Never));
+            cbStatus.DataBindings.Add(new Binding("Text", dgvCategory.DataSource, "Status", true, DataSourceUpdateMode.Never));
         }
 
-        public bool CheckForm () // Validate Form
+        public bool CheckForm() // Validate Form
         {
             errorProvider.Clear();
             if (String.IsNullOrWhiteSpace(txbCategoryName.Text))
@@ -88,7 +101,7 @@ namespace QuanLyBanHang
             this.Hide();
         }
 
-        private const string find = "Từ khóa tìm kiếm" ; // Event cho textbox tìm kiếm
+        private const string find = "Từ khóa tìm kiếm"; // Event cho textbox tìm kiếm
         private void txbCategoryFind_GotFocus(object sender, EventArgs e)
         {
             txbCategoryFind.Text = txbCategoryFind.Text == find ? string.Empty : txbCategoryFind.Text;
@@ -110,17 +123,11 @@ namespace QuanLyBanHang
                 if (result == 1)
                 {
                     cate.Name = txbCategoryName.Text;
-                    cate.Stock = (int)numberStock.Value;
-                    cate.Sold = (int)numberSold.Value;
+                    cate.Stock = 0;
+                    cate.Sold = 0;
                     cate.CreatedDate = DateTime.Now;
-                    if ((int)numberStock.Value == 0)
-                    {
-                        cate.Status = "Hết hàng";
-                    }
-                    else
-                    {
-                        cate.Status = cbStatus.Text;
-                    }
+                    cate.Status = cbStatus.Text;
+
                     CategoryDAO.Instance.AddCategory(cate);
 
                     MessageBox.Show("Thêm loại sản phẩm thành công.");
@@ -129,7 +136,7 @@ namespace QuanLyBanHang
                 {
                     MessageBox.Show("Loại sản phẩm đã tồn tại.");
                 }
-            }           
+            }
             else
             {
                 MessageBox.Show("Thêm sản phẩm không thành công");
@@ -146,8 +153,6 @@ namespace QuanLyBanHang
                 if (CategoryDAO.Instance.CheckCategory(txbCategoryName.Text) == 1)
                 {
                     category.Name = txbCategoryName.Text;
-                    category.Stock = (int)numberStock.Value;
-                    category.Sold = (int)numberSold.Value;
                     category.Status = cbStatus.Text;
                     category.ModifiedDate = DateTime.Now;
 
@@ -159,8 +164,6 @@ namespace QuanLyBanHang
                 }
                 else
                 {
-                    category.Stock = (int)numberStock.Value;
-                    category.Sold = (int)numberSold.Value;
                     category.Status = cbStatus.Text;
                     category.ModifiedDate = DateTime.Now;
 
@@ -170,7 +173,7 @@ namespace QuanLyBanHang
                         MessageBox.Show("Cập nhật thành công.");
                     }
                 }
-            }            
+            }
             else
             {
                 MessageBox.Show("Cập nhật không thành công.");

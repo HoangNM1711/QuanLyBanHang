@@ -64,6 +64,7 @@ namespace Database.EF.DAO
             {
                 var orDer = new Order();
                 orDer.TotalPrice = od.TotalPrice;
+                orDer.ModifiedDate = od.ModifiedDate;
                 db.SaveChanges();
                 return true;
             }

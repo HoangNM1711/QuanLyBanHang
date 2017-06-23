@@ -19,7 +19,7 @@ namespace CheckConnectWCF
             InitializeComponent();
         }
 
-        public static bool checkConnection = true;
+        public static bool checkConnection;
 
         #region Method
         public void CheckConn()

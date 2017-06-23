@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.txbSold = new System.Windows.Forms.TextBox();
+            this.txbStock = new System.Windows.Forms.TextBox();
             this.btnLoad = new MetroFramework.Controls.MetroButton();
             this.btnCategoryDelete = new MetroFramework.Controls.MetroButton();
             this.txbID = new System.Windows.Forms.TextBox();
@@ -43,8 +45,6 @@
             this.cbStatus = new MetroFramework.Controls.MetroComboBox();
             this.btnCategoryFind = new MetroFramework.Controls.MetroButton();
             this.txbCategoryFind = new System.Windows.Forms.TextBox();
-            this.numberSold = new System.Windows.Forms.NumericUpDown();
-            this.numberStock = new System.Windows.Forms.NumericUpDown();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -54,15 +54,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.CategoryGridView = new System.Windows.Forms.DataGridView();
+            this.dgvCategory = new System.Windows.Forms.DataGridView();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.metroPanel1.SuspendLayout();
             this.metroPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numberSold)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numberStock)).BeginInit();
             this.panel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +85,8 @@
             // metroPanel3
             // 
             this.metroPanel3.BackColor = System.Drawing.Color.White;
+            this.metroPanel3.Controls.Add(this.txbSold);
+            this.metroPanel3.Controls.Add(this.txbStock);
             this.metroPanel3.Controls.Add(this.btnLoad);
             this.metroPanel3.Controls.Add(this.btnCategoryDelete);
             this.metroPanel3.Controls.Add(this.txbID);
@@ -96,8 +96,6 @@
             this.metroPanel3.Controls.Add(this.cbStatus);
             this.metroPanel3.Controls.Add(this.btnCategoryFind);
             this.metroPanel3.Controls.Add(this.txbCategoryFind);
-            this.metroPanel3.Controls.Add(this.numberSold);
-            this.metroPanel3.Controls.Add(this.numberStock);
             this.metroPanel3.Controls.Add(this.metroLabel3);
             this.metroPanel3.Controls.Add(this.metroLabel2);
             this.metroPanel3.Controls.Add(this.metroLabel1);
@@ -115,6 +113,24 @@
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // txbSold
+            // 
+            this.txbSold.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSold.Location = new System.Drawing.Point(173, 133);
+            this.txbSold.Name = "txbSold";
+            this.txbSold.ReadOnly = true;
+            this.txbSold.Size = new System.Drawing.Size(200, 26);
+            this.txbSold.TabIndex = 18;
+            // 
+            // txbStock
+            // 
+            this.txbStock.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbStock.Location = new System.Drawing.Point(173, 97);
+            this.txbStock.Name = "txbStock";
+            this.txbStock.ReadOnly = true;
+            this.txbStock.Size = new System.Drawing.Size(200, 26);
+            this.txbStock.TabIndex = 17;
             // 
             // btnLoad
             // 
@@ -147,7 +163,7 @@
             this.txbID.Name = "txbID";
             this.txbID.ReadOnly = true;
             this.txbID.Size = new System.Drawing.Size(200, 26);
-            this.txbID.TabIndex = 2;
+            this.txbID.TabIndex = 1;
             // 
             // metroLabel4
             // 
@@ -169,7 +185,7 @@
             this.btnCategoryUpdate.Name = "btnCategoryUpdate";
             this.btnCategoryUpdate.Size = new System.Drawing.Size(101, 39);
             this.btnCategoryUpdate.TabIndex = 12;
-            this.btnCategoryUpdate.Text = "Sửa";
+            this.btnCategoryUpdate.Text = "Cập nhật";
             this.btnCategoryUpdate.UseSelectable = true;
             this.btnCategoryUpdate.Click += new System.EventHandler(this.btnCategoryUpdate_Click);
             // 
@@ -191,8 +207,8 @@
             this.cbStatus.ItemHeight = 23;
             this.cbStatus.Location = new System.Drawing.Point(173, 164);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(198, 29);
-            this.cbStatus.TabIndex = 10;
+            this.cbStatus.Size = new System.Drawing.Size(200, 29);
+            this.cbStatus.TabIndex = 5;
             this.cbStatus.UseSelectable = true;
             // 
             // btnCategoryFind
@@ -210,37 +226,13 @@
             // txbCategoryFind
             // 
             this.txbCategoryFind.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCategoryFind.Location = new System.Drawing.Point(22, 198);
+            this.txbCategoryFind.Location = new System.Drawing.Point(22, 204);
             this.txbCategoryFind.Name = "txbCategoryFind";
             this.txbCategoryFind.Size = new System.Drawing.Size(349, 22);
-            this.txbCategoryFind.TabIndex = 14;
+            this.txbCategoryFind.TabIndex = 6;
             this.txbCategoryFind.Text = "Từ khóa tìm kiếm";
             this.txbCategoryFind.Enter += new System.EventHandler(this.txbCategoryFind_GotFocus);
             this.txbCategoryFind.Leave += new System.EventHandler(this.txbCategoryFind_LostFocus);
-            // 
-            // numberSold
-            // 
-            this.numberSold.Location = new System.Drawing.Point(173, 131);
-            this.numberSold.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.numberSold.Name = "numberSold";
-            this.numberSold.Size = new System.Drawing.Size(198, 26);
-            this.numberSold.TabIndex = 8;
-            // 
-            // numberStock
-            // 
-            this.numberStock.Location = new System.Drawing.Point(173, 98);
-            this.numberStock.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.numberStock.Name = "numberStock";
-            this.numberStock.Size = new System.Drawing.Size(199, 26);
-            this.numberStock.TabIndex = 6;
             // 
             // metroLabel3
             // 
@@ -271,11 +263,11 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel1.Location = new System.Drawing.Point(80, 102);
+            this.metroLabel1.Location = new System.Drawing.Point(107, 104);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(60, 19);
             this.metroLabel1.TabIndex = 5;
-            this.metroLabel1.Text = "SL tồn kho :";
+            this.metroLabel1.Text = "SL còn :";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txbCategoryName
@@ -284,18 +276,18 @@
             this.txbCategoryName.Location = new System.Drawing.Point(173, 65);
             this.txbCategoryName.Name = "txbCategoryName";
             this.txbCategoryName.Size = new System.Drawing.Size(199, 26);
-            this.txbCategoryName.TabIndex = 4;
+            this.txbCategoryName.TabIndex = 2;
             // 
             // CategoryPName
             // 
             this.CategoryPName.AutoSize = true;
             this.CategoryPName.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.CategoryPName.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.CategoryPName.Location = new System.Drawing.Point(54, 64);
+            this.CategoryPName.Location = new System.Drawing.Point(84, 65);
             this.CategoryPName.Name = "CategoryPName";
-            this.CategoryPName.Size = new System.Drawing.Size(113, 19);
+            this.CategoryPName.Size = new System.Drawing.Size(83, 19);
             this.CategoryPName.TabIndex = 3;
-            this.CategoryPName.Text = "Loại sản phẩm :";
+            this.CategoryPName.Text = "Danh mục :";
             this.CategoryPName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
@@ -312,7 +304,7 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Location = new System.Drawing.Point(202, 68);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 40);
+            this.panel1.Size = new System.Drawing.Size(226, 40);
             this.panel1.TabIndex = 3;
             // 
             // textBox2
@@ -321,16 +313,16 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.Red;
-            this.textBox2.Location = new System.Drawing.Point(23, 6);
+            this.textBox2.Location = new System.Drawing.Point(17, 6);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 25);
+            this.textBox2.Size = new System.Drawing.Size(198, 25);
             this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "Loại Sản Phẩm";
+            this.textBox2.Text = "Danh mục Sản Phẩm";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // metroPanel2
             // 
-            this.metroPanel2.Controls.Add(this.CategoryGridView);
+            this.metroPanel2.Controls.Add(this.dgvCategory);
             this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
@@ -343,9 +335,9 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // CategoryGridView
+            // dgvCategory
             // 
-            this.CategoryGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvCategory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -353,8 +345,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.CategoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -362,10 +354,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CategoryGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CategoryGridView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CategoryGridView.Location = new System.Drawing.Point(0, 0);
-            this.CategoryGridView.Name = "CategoryGridView";
+            this.dgvCategory.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCategory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvCategory.Location = new System.Drawing.Point(0, 0);
+            this.dgvCategory.Name = "dgvCategory";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -373,9 +365,9 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.CategoryGridView.Size = new System.Drawing.Size(568, 292);
-            this.CategoryGridView.TabIndex = 2;
+            this.dgvCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCategory.Size = new System.Drawing.Size(568, 292);
+            this.dgvCategory.TabIndex = 7;
             // 
             // errorProvider
             // 
@@ -400,12 +392,10 @@
             this.metroPanel1.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numberSold)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numberStock)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
@@ -418,15 +408,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox2;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private System.Windows.Forms.DataGridView CategoryGridView;
+        private System.Windows.Forms.DataGridView dgvCategory;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.TextBox txbCategoryName;
         private MetroFramework.Controls.MetroLabel CategoryPName;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private System.Windows.Forms.NumericUpDown numberSold;
-        private System.Windows.Forms.NumericUpDown numberStock;
         private MetroFramework.Controls.MetroButton btnCategoryAdd;
         private MetroFramework.Controls.MetroButton btnCategoryDelete;
         private MetroFramework.Controls.MetroButton btnCategoryFind;
@@ -437,5 +425,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroButton btnLoad;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.TextBox txbSold;
+        private System.Windows.Forms.TextBox txbStock;
     }
 }

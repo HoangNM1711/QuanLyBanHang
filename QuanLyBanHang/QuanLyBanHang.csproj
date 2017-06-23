@@ -55,6 +55,10 @@
     </Reference>
     <Reference Include="Microsoft.AnalysisServices, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.AnalysisServices.SPClient.Interfaces, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -81,6 +85,12 @@
     </Compile>
     <Compile Include="fmCategory.Designer.cs">
       <DependentUpon>fmCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmClean.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmClean.Designer.cs">
+      <DependentUpon>fmClean.cs</DependentUpon>
     </Compile>
     <Compile Include="fmLogin.cs">
       <SubType>Form</SubType>
@@ -118,11 +128,23 @@
     <Compile Include="fmRegister.Designer.cs">
       <DependentUpon>fmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmReport.Designer.cs">
+      <DependentUpon>fmReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fmSupplier.Designer.cs">
       <DependentUpon>fmSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmUser.Designer.cs">
+      <DependentUpon>fmUser.cs</DependentUpon>
     </Compile>
     <Compile Include="fmWaiting.cs">
       <SubType>Form</SubType>
@@ -132,6 +154,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDataSet.cs">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Service References\WaitingService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,6 +169,9 @@
     </Compile>
     <EmbeddedResource Include="fmCategory.resx">
       <DependentUpon>fmCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmClean.resx">
+      <DependentUpon>fmClean.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmLogin.resx">
       <DependentUpon>fmLogin.cs</DependentUpon>
@@ -158,12 +191,19 @@
     <EmbeddedResource Include="fmRegister.resx">
       <DependentUpon>fmRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fmReport.resx">
+      <DependentUpon>fmReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fmSupplier.resx">
       <DependentUpon>fmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmUser.resx">
+      <DependentUpon>fmUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmWaiting.resx">
       <DependentUpon>fmWaiting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrderReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -184,6 +224,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ReportDataSet.xsc">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportDataSet.xss">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Service References\WaitingService\service.wsdl" />
     <None Include="Service References\WaitingService\service.xsd">
       <SubType>Designer</SubType>
@@ -225,6 +276,59 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Information.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Category.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Firm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\System.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

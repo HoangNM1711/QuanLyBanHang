@@ -76,9 +76,27 @@ namespace Database.EF.DAO
                 return false;
             }
         }
+        public bool UpdateQuantity(Product product)
+        {
+            try
+            {
+                var pro = new Product();
+
+                pro.Stock = product.Stock;
+                pro.Sold = product.Sold;
+                pro.ModifiedDate = product.ModifiedDate;
+
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         public List<Product> ListProductByStatus()
         {
-            return db.Products.Where(x => x.Status == "Đang bán").OrderBy(x => x.ID).ToList();
+            return db.Products.Where(x => x.Status == "Đang bán").OrderBy(x => x.Name).ToList();
         }
         public Product GetProductById (long id)
         {
@@ -88,6 +106,16 @@ namespace Database.EF.DAO
         public int CheckProduct(string product)
         {
             var result = db.Products.SingleOrDefault(x => x.Name == product);
+            if (result == null)
+            {
+                return 1;
+            }
+            else
+                return 0;
+        }
+        public int CheckProductID(long id)
+        {
+            var result = db.Products.SingleOrDefault(x => x.ID == id);
             if (result == null)
             {
                 return 1;

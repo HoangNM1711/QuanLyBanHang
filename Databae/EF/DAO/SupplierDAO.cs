@@ -45,7 +45,7 @@ namespace Database.EF.DAO
 
         public List<Supplier> ListSupplierByStatus()
         {
-            return db.Suppliers.Where(x => x.Status == "Đang hoạt động").OrderBy(x => x.ID).ToList();
+            return db.Suppliers.Where(x => x.Status == "Đang bán").OrderBy(x => x.Name).ToList();
         }
 
         public Supplier GetSupplierById(long id)
@@ -65,8 +65,6 @@ namespace Database.EF.DAO
             {
                 var sup = new Supplier();
                 sup.Name = supplier.Name;
-                sup.Stock = supplier.Stock;
-                sup.Sold = supplier.Sold;
                 sup.ModifiedDate = supplier.ModifiedDate;
 
                 db.SaveChanges();
@@ -77,7 +75,24 @@ namespace Database.EF.DAO
                 return false;
             }
         }
+        public bool UpdateStockSold(Supplier supplier)
+        {
+            try
+            {
+                var sup = new Supplier();
 
+                sup.Stock = supplier.Stock;
+                sup.Sold = supplier.Sold;
+                sup.ModifiedDate = supplier.ModifiedDate;
+
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         public bool DeleteSupplier (long id)
         {
             try

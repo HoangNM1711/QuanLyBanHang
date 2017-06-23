@@ -104,8 +104,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvProduct.Size = new System.Drawing.Size(596, 299);
-            this.dgvProduct.TabIndex = 2;
+            this.dgvProduct.Size = new System.Drawing.Size(613, 299);
+            this.dgvProduct.TabIndex = 10;
+            this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
+            this.dgvProduct.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvProduct_CellFormatting);
             // 
             // textBox2
             // 
@@ -181,7 +183,7 @@
             this.txbProductFind.Location = new System.Drawing.Point(17, 280);
             this.txbProductFind.Name = "txbProductFind";
             this.txbProductFind.Size = new System.Drawing.Size(413, 22);
-            this.txbProductFind.TabIndex = 13;
+            this.txbProductFind.TabIndex = 9;
             this.txbProductFind.Text = "Từ khóa tìm kiếm";
             this.txbProductFind.GotFocus += new System.EventHandler(this.txbProductFind_GotFocus);
             this.txbProductFind.LostFocus += new System.EventHandler(this.txbProductFind_LostFocus);
@@ -190,11 +192,11 @@
             // 
             this.btnProductUpdate.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnProductUpdate.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnProductUpdate.Location = new System.Drawing.Point(184, 201);
+            this.btnProductUpdate.Location = new System.Drawing.Point(175, 201);
             this.btnProductUpdate.Name = "btnProductUpdate";
             this.btnProductUpdate.Size = new System.Drawing.Size(101, 50);
             this.btnProductUpdate.TabIndex = 10;
-            this.btnProductUpdate.Text = "Sửa";
+            this.btnProductUpdate.Text = "Cập nhật";
             this.btnProductUpdate.UseSelectable = true;
             this.btnProductUpdate.Click += new System.EventHandler(this.btnProductUpdate_Click);
             // 
@@ -214,7 +216,7 @@
             // 
             this.btnProductAdd.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnProductAdd.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnProductAdd.Location = new System.Drawing.Point(22, 201);
+            this.btnProductAdd.Location = new System.Drawing.Point(26, 201);
             this.btnProductAdd.Name = "btnProductAdd";
             this.btnProductAdd.Size = new System.Drawing.Size(101, 50);
             this.btnProductAdd.TabIndex = 9;
@@ -280,11 +282,11 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel1.Location = new System.Drawing.Point(22, 78);
+            this.metroLabel1.Location = new System.Drawing.Point(49, 79);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(60, 19);
             this.metroLabel1.TabIndex = 3;
-            this.metroLabel1.Text = "SL tồn kho :";
+            this.metroLabel1.Text = "SL còn :";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txbProductName
@@ -316,7 +318,7 @@
             this.metroPanel2.HorizontalScrollbarSize = 10;
             this.metroPanel2.Location = new System.Drawing.Point(20, 390);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(596, 299);
+            this.metroPanel2.Size = new System.Drawing.Size(613, 299);
             this.metroPanel2.TabIndex = 7;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
@@ -354,7 +356,7 @@
             this.metroPanel3.HorizontalScrollbarSize = 10;
             this.metroPanel3.Location = new System.Drawing.Point(0, 0);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(594, 329);
+            this.metroPanel3.Size = new System.Drawing.Size(611, 329);
             this.metroPanel3.TabIndex = 3;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
@@ -374,7 +376,7 @@
             // 
             this.cbCateID.FormattingEnabled = true;
             this.cbCateID.ItemHeight = 23;
-            this.cbCateID.Location = new System.Drawing.Point(114, 116);
+            this.cbCateID.Location = new System.Drawing.Point(114, 112);
             this.cbCateID.Name = "cbCateID";
             this.cbCateID.Size = new System.Drawing.Size(160, 29);
             this.cbCateID.TabIndex = 5;
@@ -385,11 +387,11 @@
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel7.Location = new System.Drawing.Point(319, 120);
+            this.metroLabel7.Location = new System.Drawing.Point(353, 122);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(99, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(65, 19);
             this.metroLabel7.TabIndex = 6;
-            this.metroLabel7.Text = "Tên hãng SX :";
+            this.metroLabel7.Text = "Nhà SX :";
             this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroLabel6
@@ -397,11 +399,11 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel6.Location = new System.Drawing.Point(42, 120);
+            this.metroLabel6.Location = new System.Drawing.Point(26, 116);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(83, 19);
             this.metroLabel6.TabIndex = 5;
-            this.metroLabel6.Text = "Loại SP :";
+            this.metroLabel6.Text = "Danh mục :";
             this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nbPrice
@@ -452,7 +454,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(20, 60);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(596, 330);
+            this.metroPanel1.Size = new System.Drawing.Size(613, 330);
             this.metroPanel1.TabIndex = 5;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -466,7 +468,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 706);
+            this.ClientSize = new System.Drawing.Size(653, 706);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);

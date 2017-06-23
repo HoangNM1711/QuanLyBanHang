@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database.EF.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace QuanLyBanHang
 {
     public partial class fmMain : MetroFramework.Forms.MetroForm
     {
+        public User user { get; set; }
         public fmMain()
         {
             InitializeComponent();
+        }
+        public fmMain(User us)
+        {
+            InitializeComponent();
+            user = us;
         }
         #region Method
         private string DayExchange(string Day) // Hiện ngày hiện tại
@@ -67,12 +74,8 @@ namespace QuanLyBanHang
         #endregion
 
         #region Button
-        private void thoatToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
-        private void loạiSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        private void loạiSảnPhẩmToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             fmCategory fm = new fmCategory();
             fm.Show();
@@ -83,7 +86,8 @@ namespace QuanLyBanHang
             fmProduct fm = new fmProduct();
             fm.Show();
         }
-        private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void nhàSảnXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fmSupplier fm = new fmSupplier();
             fm.Show();
@@ -95,16 +99,34 @@ namespace QuanLyBanHang
             fm.Show();
         }
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Hide();
             fmLogin fm = new fmLogin();
             fm.Show();
         }
+        private void làmSạchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmClean fm = new fmClean();
+            fm.ShowDialog();
+        }
 
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmUser fm = new fmUser(user);
+            fm.ShowDialog();
+        }
+
+        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmReport fm = new fmReport();
+            fm.ShowDialog();
+        }
         #endregion
-
-
     }
 }

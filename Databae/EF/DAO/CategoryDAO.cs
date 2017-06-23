@@ -51,6 +51,22 @@ namespace Database.EF.DAO
             {
                 var cate = db.Categories.Find(category.ID);
                 cate.Name = category.Name;
+                cate.ModifiedDate = category.ModifiedDate;
+
+                db.SaveChanges();
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+        }
+        public bool UpdateCateStockSold(Category category)
+        {
+            try
+            {
+                var cate = db.Categories.Find(category.ID);
+
                 cate.Stock = category.Stock;
                 cate.Sold = category.Sold;
                 cate.ModifiedDate = category.ModifiedDate;
@@ -58,7 +74,7 @@ namespace Database.EF.DAO
                 db.SaveChanges();
                 return true;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return false;
             }
@@ -80,7 +96,7 @@ namespace Database.EF.DAO
 
         public List<Category> ListCategoryByStatus()
         {
-            return db.Categories.Where(x => x.Status == "Đang bán").OrderBy(x => x.ID).ToList();
+            return db.Categories.Where(x => x.Status == "Đang bán").ToList();
         }
         public Category GetCategoryById(long id)
         {

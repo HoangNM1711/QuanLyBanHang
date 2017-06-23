@@ -1,4 +1,5 @@
 ﻿using Database.EF.DTO;
+using System;
 using System.Linq;
 
 namespace Database.EF.DAO
@@ -55,12 +56,37 @@ namespace Database.EF.DAO
             else
                 return 0;
         }
+        public User GetUserByUserName(string username)
+        {
+            return db.Users.Where(x => x.Username == username).SingleOrDefault();
+        }
 
         public long Register(User user)
         {
             db.Users.Add(user);
             db.SaveChanges();
             return user.ID;
+        }
+
+        public bool UpdateUser(User user)
+        {
+            try
+            {
+                var us = new User();
+                us.Name = user.Name;
+                us.Password = user.Password;
+                us.Phone = user.Phone;
+                us.Username = user.Username;
+                us.Address = user.Address;
+                us.Email = user.Email;
+
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

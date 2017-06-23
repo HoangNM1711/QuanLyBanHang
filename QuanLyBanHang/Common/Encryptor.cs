@@ -9,22 +9,40 @@ namespace QuanLyBanHang.Common
 {
     public static class Encryptor
     {
-        //Hàm mã hoá MD5 cho password
-        public static string MD5Hash(string text)
+        //Mã hóa password
+        public static string EncryptorPassword(string text)
         {
-            MD5 md5 = new MD5CryptoServiceProvider();
-
-            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
-
-            byte[] result = md5.Hash;
-
-            StringBuilder strBuilder = new StringBuilder();
-            for (int i = 0; i < result.Length; i++)
+            string hash = "f0xle@rn";
+            byte[] data = UTF8Encoding.UTF8.GetBytes(text);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
             {
-                strBuilder.Append(result[i].ToString("x2"));
-            }
+                byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                {
+                    ICryptoTransform transform = tripDes.CreateEncryptor();
+                    byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
+                    var results = Convert.ToBase64String(result, 0, result.Length);
 
-            return strBuilder.ToString();
+                    return results;
+                }
+            }
+        }
+        public static string DecryptorPassword(string text)
+        {
+            string hash = "f0xle@rn";
+            byte[] data = Convert.FromBase64String(text);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                {
+                    ICryptoTransform transform = tripDes.CreateDecryptor();
+                    byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
+                    var results = UTF8Encoding.UTF8.GetString(result);
+
+                    return results;
+                }
+            }
         }
     }
 }

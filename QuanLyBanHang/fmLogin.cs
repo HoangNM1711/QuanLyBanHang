@@ -54,12 +54,15 @@ namespace QuanLyBanHang
         #region Button
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            var result = UserDAO.Instance.Login(UsernameTxb.Text, Encryptor.MD5Hash(PasswordTxb.Text));
+            var result = UserDAO.Instance.Login(UsernameTxb.Text, Encryptor.EncryptorPassword(PasswordTxb.Text));
             if (result == 1)
             {
-                fmMain main = new fmMain();
+                var user = UserDAO.Instance.GetUserByUserName(UsernameTxb.Text);
+                fmMain main = new fmMain(user);
+
                 this.Hide();
                 main.ShowDialog();
+
             }
             else if (result == 0)
             {
@@ -78,8 +81,23 @@ namespace QuanLyBanHang
             fm.ShowDialog();
             this.Show();
         }
+
+        private void btnForget_Click(object sender, EventArgs e)
+        {
+            var result = UserDAO.Instance.CheckUsername(UsernameTxb.Text);
+            if (result == 0)
+            {
+                var user = UserDAO.Instance.GetUserByUserName(UsernameTxb.Text);
+                string password = Encryptor.DecryptorPassword(user.Password);
+
+                MessageBox.Show("Mật khẩu của tài khoản là : " + password);
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản không tồn tại.");
+            }
+
+        }
         #endregion
-
-
     }
 }

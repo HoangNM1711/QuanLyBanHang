@@ -95,12 +95,14 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOrder.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOrder.Size = new System.Drawing.Size(610, 364);
-            this.dgvOrder.TabIndex = 8;
+            this.dgvOrder.TabIndex = 15;
             this.dgvOrder.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellDoubleClick);
+            this.dgvOrder.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOrder_CellFormatting);
             // 
             // metroPanel3
             // 
             this.metroPanel3.BackColor = System.Drawing.Color.White;
+            this.metroPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.metroPanel3.Controls.Add(this.txbTotal);
             this.metroPanel3.Controls.Add(this.metroLabel6);
             this.metroPanel3.Controls.Add(this.txbEmail);
@@ -140,18 +142,19 @@
             this.txbTotal.Name = "txbTotal";
             this.txbTotal.ReadOnly = true;
             this.txbTotal.Size = new System.Drawing.Size(161, 26);
-            this.txbTotal.TabIndex = 17;
+            this.txbTotal.TabIndex = 6;
+            this.txbTotal.TextChanged += new System.EventHandler(this.txbTotal_TextChanged);
             // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel6.Location = new System.Drawing.Point(379, 119);
+            this.metroLabel6.Location = new System.Drawing.Point(332, 117);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(86, 19);
             this.metroLabel6.TabIndex = 16;
-            this.metroLabel6.Text = "Giá :";
+            this.metroLabel6.Text = "Thành tiền :";
             this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txbEmail
@@ -230,7 +233,7 @@
             this.cbStatus.Location = new System.Drawing.Point(269, 155);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(161, 29);
-            this.cbStatus.TabIndex = 6;
+            this.cbStatus.TabIndex = 7;
             this.cbStatus.UseSelectable = true;
             // 
             // btnOrderFind
@@ -251,7 +254,7 @@
             this.txbOrderFind.Location = new System.Drawing.Point(17, 259);
             this.txbOrderFind.Name = "txbOrderFind";
             this.txbOrderFind.Size = new System.Drawing.Size(413, 22);
-            this.txbOrderFind.TabIndex = 7;
+            this.txbOrderFind.TabIndex = 13;
             this.txbOrderFind.Text = "Từ khóa tìm kiếm";
             this.txbOrderFind.GotFocus += new System.EventHandler(this.txbProductFind_GotFocus);
             this.txbOrderFind.LostFocus += new System.EventHandler(this.txbProductFind_LostFocus);

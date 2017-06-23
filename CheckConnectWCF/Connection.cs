@@ -5,6 +5,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Data.Common;
+using System.Data.Entity.Core.Objects.DataClasses;
 
 namespace CheckConnectWCF
 {
@@ -13,12 +15,19 @@ namespace CheckConnectWCF
     {
         public bool IsAlive()
         {
-            using (ShopDbContext db = new ShopDbContext())
+            using (var db = new ShopDbContext())
             {
-                db.Database.Exists();
+                DbConnection conn = db.Database.Connection;
+                try
+                {
+                    conn.Open();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
             }
-
-            return true;
         }
     }
 }

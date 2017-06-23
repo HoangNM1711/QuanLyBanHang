@@ -15,7 +15,7 @@ namespace Database.EF.DTO
 
         public long OrderID { get; set; }
 
-        public int? Quantity { get; set; }
+        public int Quantity { get; set; }
 
         public decimal? Price { get; set; }
 
