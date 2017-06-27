@@ -267,7 +267,7 @@ namespace QuanLyBanHang
             worksheet.Cells[10, 1] = "STT";
             worksheet.Cells[10, 2] = "Mã SP";
             worksheet.Cells[10, 3] = "Tên SP";
-            worksheet.Cells[10, 4] = "Mã ĐH";
+            worksheet.Cells[10, 4] = "Mã HĐ";
             worksheet.Cells[10, 5] = "SL";
             worksheet.Cells[10, 6] = "Giá";
             worksheet.Cells[10, 7] = "Thành tiền";

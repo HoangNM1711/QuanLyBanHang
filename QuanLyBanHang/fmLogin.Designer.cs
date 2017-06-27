@@ -71,7 +71,7 @@
             this.btnForget.Location = new System.Drawing.Point(274, 138);
             this.btnForget.Name = "btnForget";
             this.btnForget.Size = new System.Drawing.Size(91, 37);
-            this.btnForget.TabIndex = 8;
+            this.btnForget.TabIndex = 6;
             this.btnForget.Text = "Quên MK";
             this.btnForget.UseSelectable = true;
             this.btnForget.Click += new System.EventHandler(this.btnForget_Click);
@@ -82,8 +82,8 @@
             this.PasswordTxb.Location = new System.Drawing.Point(119, 93);
             this.PasswordTxb.Name = "PasswordTxb";
             this.PasswordTxb.Size = new System.Drawing.Size(246, 29);
-            this.PasswordTxb.TabIndex = 2;
-            this.PasswordTxb.Text = "123";
+            this.PasswordTxb.TabIndex = 3;
+            this.PasswordTxb.Text = "Mật khẩu";
             this.PasswordTxb.Enter += new System.EventHandler(this.PasswordTxb_GotFocus);
             this.PasswordTxb.Leave += new System.EventHandler(this.PasswordTxb_LostFocus);
             // 
@@ -93,8 +93,8 @@
             this.UsernameTxb.Location = new System.Drawing.Point(119, 43);
             this.UsernameTxb.Name = "UsernameTxb";
             this.UsernameTxb.Size = new System.Drawing.Size(246, 29);
-            this.UsernameTxb.TabIndex = 1;
-            this.UsernameTxb.Text = "admin";
+            this.UsernameTxb.TabIndex = 2;
+            this.UsernameTxb.Text = "Tên đăng nhập";
             this.UsernameTxb.Enter += new System.EventHandler(this.UsernameTxb_GotFocus);
             this.UsernameTxb.Leave += new System.EventHandler(this.UsernameTxb_LostFocus);
             // 
@@ -104,7 +104,7 @@
             this.RegisterBtn.Location = new System.Drawing.Point(168, 138);
             this.RegisterBtn.Name = "RegisterBtn";
             this.RegisterBtn.Size = new System.Drawing.Size(100, 37);
-            this.RegisterBtn.TabIndex = 7;
+            this.RegisterBtn.TabIndex = 5;
             this.RegisterBtn.Text = "Đăng Ký";
             this.RegisterBtn.UseSelectable = true;
             this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
@@ -115,7 +115,7 @@
             this.LoginBtn.Location = new System.Drawing.Point(71, 138);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(91, 37);
-            this.LoginBtn.TabIndex = 3;
+            this.LoginBtn.TabIndex = 4;
             this.LoginBtn.Text = "Đăng Nhập";
             this.LoginBtn.UseSelectable = true;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);

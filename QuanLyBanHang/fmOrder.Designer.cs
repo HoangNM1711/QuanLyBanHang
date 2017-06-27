@@ -95,7 +95,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOrder.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOrder.Size = new System.Drawing.Size(610, 364);
-            this.dgvOrder.TabIndex = 15;
+            this.dgvOrder.TabIndex = 9;
             this.dgvOrder.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellDoubleClick);
             this.dgvOrder.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOrder_CellFormatting);
             // 
@@ -200,7 +200,7 @@
             this.btnOrderLoad.Location = new System.Drawing.Point(484, 191);
             this.btnOrderLoad.Name = "btnOrderLoad";
             this.btnOrderLoad.Size = new System.Drawing.Size(101, 50);
-            this.btnOrderLoad.TabIndex = 12;
+            this.btnOrderLoad.TabIndex = 13;
             this.btnOrderLoad.Text = "Xem";
             this.btnOrderLoad.UseSelectable = true;
             this.btnOrderLoad.Click += new System.EventHandler(this.btnOrderLoad_Click);
@@ -254,7 +254,7 @@
             this.txbOrderFind.Location = new System.Drawing.Point(17, 259);
             this.txbOrderFind.Name = "txbOrderFind";
             this.txbOrderFind.Size = new System.Drawing.Size(413, 22);
-            this.txbOrderFind.TabIndex = 13;
+            this.txbOrderFind.TabIndex = 8;
             this.txbOrderFind.Text = "Từ khóa tìm kiếm";
             this.txbOrderFind.GotFocus += new System.EventHandler(this.txbProductFind_GotFocus);
             this.txbOrderFind.LostFocus += new System.EventHandler(this.txbProductFind_LostFocus);
@@ -266,7 +266,7 @@
             this.btnOrderUpdate.Location = new System.Drawing.Point(174, 191);
             this.btnOrderUpdate.Name = "btnOrderUpdate";
             this.btnOrderUpdate.Size = new System.Drawing.Size(101, 50);
-            this.btnOrderUpdate.TabIndex = 10;
+            this.btnOrderUpdate.TabIndex = 11;
             this.btnOrderUpdate.Text = "Sửa";
             this.btnOrderUpdate.UseSelectable = true;
             this.btnOrderUpdate.Click += new System.EventHandler(this.btnOrderUpdate_Click);
@@ -278,7 +278,7 @@
             this.btnOrderDelete.Location = new System.Drawing.Point(329, 191);
             this.btnOrderDelete.Name = "btnOrderDelete";
             this.btnOrderDelete.Size = new System.Drawing.Size(101, 50);
-            this.btnOrderDelete.TabIndex = 11;
+            this.btnOrderDelete.TabIndex = 12;
             this.btnOrderDelete.Text = "Xóa";
             this.btnOrderDelete.UseSelectable = true;
             this.btnOrderDelete.Click += new System.EventHandler(this.btnOrderDelete_Click);
@@ -290,7 +290,7 @@
             this.btnOrderAdd.Location = new System.Drawing.Point(22, 191);
             this.btnOrderAdd.Name = "btnOrderAdd";
             this.btnOrderAdd.Size = new System.Drawing.Size(101, 50);
-            this.btnOrderAdd.TabIndex = 9;
+            this.btnOrderAdd.TabIndex = 10;
             this.btnOrderAdd.Text = "Thêm";
             this.btnOrderAdd.UseSelectable = true;
             this.btnOrderAdd.Click += new System.EventHandler(this.btnOrderAdd_Click);

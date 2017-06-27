@@ -109,7 +109,7 @@
             this.metroPanel3.Location = new System.Drawing.Point(0, 0);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(566, 243);
-            this.metroPanel3.TabIndex = 3;
+            this.metroPanel3.TabIndex = 0;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
@@ -121,7 +121,7 @@
             this.txbSold.Name = "txbSold";
             this.txbSold.ReadOnly = true;
             this.txbSold.Size = new System.Drawing.Size(200, 26);
-            this.txbSold.TabIndex = 18;
+            this.txbSold.TabIndex = 4;
             // 
             // txbStock
             // 
@@ -130,7 +130,7 @@
             this.txbStock.Name = "txbStock";
             this.txbStock.ReadOnly = true;
             this.txbStock.Size = new System.Drawing.Size(200, 26);
-            this.txbStock.TabIndex = 17;
+            this.txbStock.TabIndex = 3;
             // 
             // btnLoad
             // 

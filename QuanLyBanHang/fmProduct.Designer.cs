@@ -111,6 +111,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox2.BackColor = System.Drawing.Color.LightGray;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,7 +130,7 @@
             this.btnLoadProduct.Location = new System.Drawing.Point(484, 201);
             this.btnLoadProduct.Name = "btnLoadProduct";
             this.btnLoadProduct.Size = new System.Drawing.Size(101, 50);
-            this.btnLoadProduct.TabIndex = 12;
+            this.btnLoadProduct.TabIndex = 14;
             this.btnLoadProduct.Text = "Xem";
             this.btnLoadProduct.UseSelectable = true;
             this.btnLoadProduct.Click += new System.EventHandler(this.btnLoadProduct_Click);
@@ -172,7 +173,7 @@
             this.btnProductFind.Location = new System.Drawing.Point(484, 266);
             this.btnProductFind.Name = "btnProductFind";
             this.btnProductFind.Size = new System.Drawing.Size(101, 50);
-            this.btnProductFind.TabIndex = 14;
+            this.btnProductFind.TabIndex = 15;
             this.btnProductFind.Text = "Tìm kiếm";
             this.btnProductFind.UseSelectable = true;
             this.btnProductFind.Click += new System.EventHandler(this.btnProductFind_Click);
@@ -195,7 +196,7 @@
             this.btnProductUpdate.Location = new System.Drawing.Point(175, 201);
             this.btnProductUpdate.Name = "btnProductUpdate";
             this.btnProductUpdate.Size = new System.Drawing.Size(101, 50);
-            this.btnProductUpdate.TabIndex = 10;
+            this.btnProductUpdate.TabIndex = 12;
             this.btnProductUpdate.Text = "Cập nhật";
             this.btnProductUpdate.UseSelectable = true;
             this.btnProductUpdate.Click += new System.EventHandler(this.btnProductUpdate_Click);
@@ -207,7 +208,7 @@
             this.btnProductDelete.Location = new System.Drawing.Point(329, 201);
             this.btnProductDelete.Name = "btnProductDelete";
             this.btnProductDelete.Size = new System.Drawing.Size(101, 50);
-            this.btnProductDelete.TabIndex = 11;
+            this.btnProductDelete.TabIndex = 13;
             this.btnProductDelete.Text = "Xóa";
             this.btnProductDelete.UseSelectable = true;
             this.btnProductDelete.Click += new System.EventHandler(this.btnProductDelete_Click);
@@ -219,13 +220,16 @@
             this.btnProductAdd.Location = new System.Drawing.Point(26, 201);
             this.btnProductAdd.Name = "btnProductAdd";
             this.btnProductAdd.Size = new System.Drawing.Size(101, 50);
-            this.btnProductAdd.TabIndex = 9;
+            this.btnProductAdd.TabIndex = 11;
             this.btnProductAdd.Text = "Thêm";
             this.btnProductAdd.UseSelectable = true;
             this.btnProductAdd.Click += new System.EventHandler(this.btnProductAdd_Click);
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.textBox2);
@@ -357,7 +361,7 @@
             this.metroPanel3.Location = new System.Drawing.Point(0, 0);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(611, 329);
-            this.metroPanel3.TabIndex = 3;
+            this.metroPanel3.TabIndex = 0;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;

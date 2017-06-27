@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -45,6 +45,7 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.CategoryPName = new MetroFramework.Controls.MetroLabel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.btnExport = new MetroFramework.Controls.MetroButton();
             this.btnODFind = new MetroFramework.Controls.MetroButton();
             this.txbODFind = new System.Windows.Forms.TextBox();
             this.cbCategory = new MetroFramework.Controls.MetroComboBox();
@@ -58,7 +59,6 @@
             this.cbProductID = new MetroFramework.Controls.MetroComboBox();
             this.dgvOrderDetail = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnExport = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panel1.SuspendLayout();
             this.metroPanel3.SuspendLayout();
@@ -101,7 +101,7 @@
             this.btnOrderLoad.Location = new System.Drawing.Point(445, 215);
             this.btnOrderLoad.Name = "btnOrderLoad";
             this.btnOrderLoad.Size = new System.Drawing.Size(101, 50);
-            this.btnOrderLoad.TabIndex = 12;
+            this.btnOrderLoad.TabIndex = 13;
             this.btnOrderLoad.Text = "Xem";
             this.btnOrderLoad.UseSelectable = true;
             this.btnOrderLoad.Click += new System.EventHandler(this.btnOrderLoad_Click);
@@ -134,7 +134,7 @@
             this.btnOrderUpdate.Location = new System.Drawing.Point(174, 215);
             this.btnOrderUpdate.Name = "btnOrderUpdate";
             this.btnOrderUpdate.Size = new System.Drawing.Size(101, 50);
-            this.btnOrderUpdate.TabIndex = 10;
+            this.btnOrderUpdate.TabIndex = 11;
             this.btnOrderUpdate.Text = "Cập nhật";
             this.btnOrderUpdate.UseSelectable = true;
             this.btnOrderUpdate.Click += new System.EventHandler(this.btnOrderUpdate_Click);
@@ -146,7 +146,7 @@
             this.btnOrderDelete.Location = new System.Drawing.Point(320, 215);
             this.btnOrderDelete.Name = "btnOrderDelete";
             this.btnOrderDelete.Size = new System.Drawing.Size(101, 50);
-            this.btnOrderDelete.TabIndex = 11;
+            this.btnOrderDelete.TabIndex = 12;
             this.btnOrderDelete.Text = "Xóa";
             this.btnOrderDelete.UseSelectable = true;
             this.btnOrderDelete.Click += new System.EventHandler(this.btnOrderDelete_Click);
@@ -158,7 +158,7 @@
             this.btnOrderAdd.Location = new System.Drawing.Point(50, 215);
             this.btnOrderAdd.Name = "btnOrderAdd";
             this.btnOrderAdd.Size = new System.Drawing.Size(101, 50);
-            this.btnOrderAdd.TabIndex = 9;
+            this.btnOrderAdd.TabIndex = 10;
             this.btnOrderAdd.Text = "Thêm";
             this.btnOrderAdd.UseSelectable = true;
             this.btnOrderAdd.Click += new System.EventHandler(this.btnOrderAdd_Click);
@@ -232,10 +232,22 @@
             this.metroPanel3.Location = new System.Drawing.Point(20, 60);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(622, 340);
-            this.metroPanel3.TabIndex = 10;
+            this.metroPanel3.TabIndex = 0;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // btnExport
+            // 
+            this.btnExport.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnExport.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnExport.Location = new System.Drawing.Point(516, 3);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(101, 25);
+            this.btnExport.TabIndex = 15;
+            this.btnExport.Text = "Export Excel";
+            this.btnExport.UseSelectable = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnODFind
             // 
@@ -244,7 +256,7 @@
             this.btnODFind.Location = new System.Drawing.Point(445, 271);
             this.btnODFind.Name = "btnODFind";
             this.btnODFind.Size = new System.Drawing.Size(101, 50);
-            this.btnODFind.TabIndex = 26;
+            this.btnODFind.TabIndex = 14;
             this.btnODFind.Text = "Tìm kiếm";
             this.btnODFind.UseSelectable = true;
             this.btnODFind.Click += new System.EventHandler(this.btnODFind_Click);
@@ -255,7 +267,7 @@
             this.txbODFind.Location = new System.Drawing.Point(50, 286);
             this.txbODFind.Name = "txbODFind";
             this.txbODFind.Size = new System.Drawing.Size(371, 22);
-            this.txbODFind.TabIndex = 25;
+            this.txbODFind.TabIndex = 8;
             this.txbODFind.Text = "Từ khóa tìm kiếm";
             this.txbODFind.GotFocus += new System.EventHandler(this.txbODFind_GotFocus);
             this.txbODFind.LostFocus += new System.EventHandler(this.txbODFind_LostFocus);
@@ -267,7 +279,7 @@
             this.cbCategory.Location = new System.Drawing.Point(110, 90);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(165, 29);
-            this.cbCategory.TabIndex = 24;
+            this.cbCategory.TabIndex = 3;
             this.cbCategory.UseSelectable = true;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
@@ -290,7 +302,7 @@
             this.txbTotalPrice.Name = "txbTotalPrice";
             this.txbTotalPrice.ReadOnly = true;
             this.txbTotalPrice.Size = new System.Drawing.Size(152, 26);
-            this.txbTotalPrice.TabIndex = 6;
+            this.txbTotalPrice.TabIndex = 7;
             this.txbTotalPrice.TextChanged += new System.EventHandler(this.txbTotalPrice_TextChanged);
             // 
             // metroLabel5
@@ -312,7 +324,7 @@
             this.txbPrice.Name = "txbPrice";
             this.txbPrice.ReadOnly = true;
             this.txbPrice.Size = new System.Drawing.Size(165, 26);
-            this.txbPrice.TabIndex = 4;
+            this.txbPrice.TabIndex = 5;
             // 
             // metroLabel3
             // 
@@ -340,7 +352,7 @@
             this.numQuantity.Location = new System.Drawing.Point(411, 132);
             this.numQuantity.Name = "numQuantity";
             this.numQuantity.Size = new System.Drawing.Size(173, 26);
-            this.numQuantity.TabIndex = 5;
+            this.numQuantity.TabIndex = 6;
             // 
             // cbProductID
             // 
@@ -349,43 +361,43 @@
             this.cbProductID.Location = new System.Drawing.Point(411, 90);
             this.cbProductID.Name = "cbProductID";
             this.cbProductID.Size = new System.Drawing.Size(173, 29);
-            this.cbProductID.TabIndex = 3;
+            this.cbProductID.TabIndex = 4;
             this.cbProductID.UseSelectable = true;
             this.cbProductID.SelectedIndexChanged += new System.EventHandler(this.cbProductID_SelectedIndexChanged);
             // 
             // dgvOrderDetail
             // 
             this.dgvOrderDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrderDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrderDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrderDetail.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrderDetail.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrderDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvOrderDetail.Name = "dgvOrderDetail";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrderDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrderDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOrderDetail.Size = new System.Drawing.Size(622, 271);
-            this.dgvOrderDetail.TabIndex = 11;
+            this.dgvOrderDetail.TabIndex = 9;
             this.dgvOrderDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetail_CellClick);
             this.dgvOrderDetail.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOrderDetail_CellFormatting);
             // 
@@ -397,18 +409,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(622, 271);
             this.panel2.TabIndex = 12;
-            // 
-            // btnExport
-            // 
-            this.btnExport.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnExport.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnExport.Location = new System.Drawing.Point(516, 3);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(101, 25);
-            this.btnExport.TabIndex = 27;
-            this.btnExport.Text = "Export Excel";
-            this.btnExport.UseSelectable = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // fmOrderDetail
             // 

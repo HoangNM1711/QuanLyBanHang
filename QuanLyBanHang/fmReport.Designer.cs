@@ -29,37 +29,45 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rvReport = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.dtpToDay = new MetroFramework.Controls.MetroDateTime();
-            this.dtpFromDay = new MetroFramework.Controls.MetroDateTime();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.OrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ReportDataSet = new QuanLyBanHang.ReportDataSet();
-            this.OrderTableAdapter = new QuanLyBanHang.ReportDataSetTableAdapters.OrderTableAdapter();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.rvReport = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.btnLoad = new MetroFramework.Controls.MetroButton();
-            this.metroPanel1.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.dtpToDay = new MetroFramework.Controls.MetroDateTime();
+            this.dtpFromDay = new MetroFramework.Controls.MetroDateTime();
+            this.OrderTableAdapter = new QuanLyBanHang.ReportDataSetTableAdapters.OrderTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.OrderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportDataSet)).BeginInit();
+            this.metroPanel1.SuspendLayout();
+            this.metroPanel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // OrderBindingSource
+            // 
+            this.OrderBindingSource.DataMember = "Order";
+            this.OrderBindingSource.DataSource = this.ReportDataSet;
+            // 
+            // ReportDataSet
+            // 
+            this.ReportDataSet.DataSetName = "ReportDataSet";
+            this.ReportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rvReport
             // 
-            this.rvReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource2.Name = "ReportData";
-            reportDataSource2.Value = this.OrderBindingSource;
-            this.rvReport.LocalReport.DataSources.Add(reportDataSource2);
+            this.rvReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "ReportData";
+            reportDataSource1.Value = this.OrderBindingSource;
+            this.rvReport.LocalReport.DataSources.Add(reportDataSource1);
             this.rvReport.LocalReport.ReportEmbeddedResource = "QuanLyBanHang.OrderReport.rdlc";
-            this.rvReport.Location = new System.Drawing.Point(3, 52);
+            this.rvReport.Location = new System.Drawing.Point(0, 46);
             this.rvReport.Name = "rvReport";
-            this.rvReport.Size = new System.Drawing.Size(694, 474);
-            this.rvReport.TabIndex = 0;
+            this.rvReport.Size = new System.Drawing.Size(700, 483);
+            this.rvReport.TabIndex = 4;
             // 
             // metroPanel1
             // 
@@ -77,26 +85,6 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // dtpToDay
-            // 
-            this.dtpToDay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpToDay.Location = new System.Drawing.Point(379, 8);
-            this.dtpToDay.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpToDay.Name = "dtpToDay";
-            this.dtpToDay.Size = new System.Drawing.Size(200, 29);
-            this.dtpToDay.TabIndex = 3;
-            // 
-            // dtpFromDay
-            // 
-            this.dtpFromDay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dtpFromDay.Location = new System.Drawing.Point(80, 8);
-            this.dtpFromDay.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpFromDay.Name = "dtpFromDay";
-            this.dtpFromDay.Size = new System.Drawing.Size(200, 29);
-            this.dtpFromDay.TabIndex = 2;
-            // 
             // metroPanel2
             // 
             this.metroPanel2.Controls.Add(this.btnLoad);
@@ -111,24 +99,34 @@
             this.metroPanel2.Location = new System.Drawing.Point(0, 0);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(700, 46);
-            this.metroPanel2.TabIndex = 2;
+            this.metroPanel2.TabIndex = 0;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // OrderBindingSource
+            // btnLoad
             // 
-            this.OrderBindingSource.DataMember = "Order";
-            this.OrderBindingSource.DataSource = this.ReportDataSet;
+            this.btnLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoad.Location = new System.Drawing.Point(602, 8);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 29);
+            this.btnLoad.TabIndex = 3;
+            this.btnLoad.Text = "Xem";
+            this.btnLoad.UseSelectable = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // ReportDataSet
+            // metroLabel2
             // 
-            this.ReportDataSet.DataSetName = "ReportDataSet";
-            this.ReportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // OrderTableAdapter
-            // 
-            this.OrderTableAdapter.ClearBeforeFill = true;
+            this.metroLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel2.Location = new System.Drawing.Point(293, 13);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(80, 19);
+            this.metroLabel2.TabIndex = 5;
+            this.metroLabel2.Text = "Đến ngày :";
             // 
             // metroLabel1
             // 
@@ -140,25 +138,29 @@
             this.metroLabel1.TabIndex = 4;
             this.metroLabel1.Text = "Từ ngày :";
             // 
-            // metroLabel2
+            // dtpToDay
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.Location = new System.Drawing.Point(293, 13);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(80, 19);
-            this.metroLabel2.TabIndex = 5;
-            this.metroLabel2.Text = "Đến ngày :";
+            this.dtpToDay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpToDay.Location = new System.Drawing.Point(379, 8);
+            this.dtpToDay.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpToDay.Name = "dtpToDay";
+            this.dtpToDay.Size = new System.Drawing.Size(200, 29);
+            this.dtpToDay.TabIndex = 2;
             // 
-            // btnLoad
+            // dtpFromDay
             // 
-            this.btnLoad.Location = new System.Drawing.Point(602, 8);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 29);
-            this.btnLoad.TabIndex = 6;
-            this.btnLoad.Text = "Xem";
-            this.btnLoad.UseSelectable = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            this.dtpFromDay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dtpFromDay.Location = new System.Drawing.Point(80, 8);
+            this.dtpFromDay.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpFromDay.Name = "dtpFromDay";
+            this.dtpFromDay.Size = new System.Drawing.Size(200, 29);
+            this.dtpFromDay.TabIndex = 1;
+            // 
+            // OrderTableAdapter
+            // 
+            this.OrderTableAdapter.ClearBeforeFill = true;
             // 
             // fmReport
             // 
@@ -171,11 +173,11 @@
             this.Padding = new System.Windows.Forms.Padding(23, 69, 23, 23);
             this.Text = "Báo cáo doanh thu";
             this.Load += new System.EventHandler(this.fmReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.OrderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportDataSet)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReportDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

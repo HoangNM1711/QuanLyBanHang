@@ -75,7 +75,7 @@
             this.btnLoad.Location = new System.Drawing.Point(390, 147);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(101, 39);
-            this.btnLoad.TabIndex = 16;
+            this.btnLoad.TabIndex = 11;
             this.btnLoad.Text = "Xem";
             this.btnLoad.UseSelectable = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
@@ -118,7 +118,7 @@
             this.btnSupplierFind.Location = new System.Drawing.Point(390, 192);
             this.btnSupplierFind.Name = "btnSupplierFind";
             this.btnSupplierFind.Size = new System.Drawing.Size(101, 42);
-            this.btnSupplierFind.TabIndex = 15;
+            this.btnSupplierFind.TabIndex = 12;
             this.btnSupplierFind.Text = "Tìm kiếm";
             this.btnSupplierFind.UseSelectable = true;
             this.btnSupplierFind.Click += new System.EventHandler(this.btnSupplierFind_Click);
@@ -141,7 +141,7 @@
             this.btnSupplierUpdate.Location = new System.Drawing.Point(390, 57);
             this.btnSupplierUpdate.Name = "btnSupplierUpdate";
             this.btnSupplierUpdate.Size = new System.Drawing.Size(101, 39);
-            this.btnSupplierUpdate.TabIndex = 12;
+            this.btnSupplierUpdate.TabIndex = 9;
             this.btnSupplierUpdate.Text = "Cập nhật";
             this.btnSupplierUpdate.UseSelectable = true;
             this.btnSupplierUpdate.Click += new System.EventHandler(this.btnSupplierUpdate_Click);
@@ -153,7 +153,7 @@
             this.btnDeleteDelete.Location = new System.Drawing.Point(390, 102);
             this.btnDeleteDelete.Name = "btnDeleteDelete";
             this.btnDeleteDelete.Size = new System.Drawing.Size(101, 39);
-            this.btnDeleteDelete.TabIndex = 13;
+            this.btnDeleteDelete.TabIndex = 10;
             this.btnDeleteDelete.Text = "Xóa";
             this.btnDeleteDelete.UseSelectable = true;
             this.btnDeleteDelete.Click += new System.EventHandler(this.btnDeleteDelete_Click);
@@ -165,7 +165,7 @@
             this.btnSupplierAdd.Location = new System.Drawing.Point(390, 12);
             this.btnSupplierAdd.Name = "btnSupplierAdd";
             this.btnSupplierAdd.Size = new System.Drawing.Size(101, 39);
-            this.btnSupplierAdd.TabIndex = 11;
+            this.btnSupplierAdd.TabIndex = 8;
             this.btnSupplierAdd.Text = "Thêm";
             this.btnSupplierAdd.UseSelectable = true;
             this.btnSupplierAdd.Click += new System.EventHandler(this.btnSupplierAdd_Click);
@@ -248,7 +248,7 @@
             this.metroPanel3.Location = new System.Drawing.Point(0, 0);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(551, 261);
-            this.metroPanel3.TabIndex = 3;
+            this.metroPanel3.TabIndex = 0;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
@@ -260,7 +260,7 @@
             this.txbSold.Name = "txbSold";
             this.txbSold.ReadOnly = true;
             this.txbSold.Size = new System.Drawing.Size(200, 26);
-            this.txbSold.TabIndex = 18;
+            this.txbSold.TabIndex = 4;
             // 
             // txbStock
             // 
@@ -269,7 +269,7 @@
             this.txbStock.Name = "txbStock";
             this.txbStock.ReadOnly = true;
             this.txbStock.Size = new System.Drawing.Size(200, 26);
-            this.txbStock.TabIndex = 17;
+            this.txbStock.TabIndex = 3;
             // 
             // metroLabel2
             // 

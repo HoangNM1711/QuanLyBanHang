@@ -77,7 +77,7 @@
             this.txbPhone.Location = new System.Drawing.Point(182, 232);
             this.txbPhone.Name = "txbPhone";
             this.txbPhone.Size = new System.Drawing.Size(223, 26);
-            this.txbPhone.TabIndex = 15;
+            this.txbPhone.TabIndex = 6;
             // 
             // txbEmail
             // 
@@ -85,7 +85,7 @@
             this.txbEmail.Location = new System.Drawing.Point(182, 197);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(223, 26);
-            this.txbEmail.TabIndex = 14;
+            this.txbEmail.TabIndex = 5;
             // 
             // metroLabel5
             // 
@@ -105,7 +105,7 @@
             this.txbAddress.Multiline = true;
             this.txbAddress.Name = "txbAddress";
             this.txbAddress.Size = new System.Drawing.Size(223, 49);
-            this.txbAddress.TabIndex = 12;
+            this.txbAddress.TabIndex = 4;
             // 
             // metroLabel4
             // 
@@ -124,7 +124,7 @@
             this.txbName.Location = new System.Drawing.Point(182, 107);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(223, 26);
-            this.txbName.TabIndex = 10;
+            this.txbName.TabIndex = 3;
             // 
             // btnBack
             // 
@@ -132,7 +132,7 @@
             this.btnBack.Location = new System.Drawing.Point(295, 267);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(110, 42);
-            this.btnBack.TabIndex = 9;
+            this.btnBack.TabIndex = 8;
             this.btnBack.Text = "Trở lại";
             this.btnBack.UseSelectable = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -143,7 +143,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(182, 267);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(107, 42);
-            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseSelectable = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -154,7 +154,7 @@
             this.txbPassword.Location = new System.Drawing.Point(182, 70);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(223, 26);
-            this.txbPassword.TabIndex = 5;
+            this.txbPassword.TabIndex = 2;
             // 
             // metroLabel2
             // 
@@ -173,7 +173,7 @@
             this.txbUsername.Location = new System.Drawing.Point(182, 34);
             this.txbUsername.Name = "txbUsername";
             this.txbUsername.Size = new System.Drawing.Size(223, 26);
-            this.txbUsername.TabIndex = 3;
+            this.txbUsername.TabIndex = 1;
             // 
             // metroLabel1
             // 
@@ -210,7 +210,7 @@
             this.metroPanel1.Location = new System.Drawing.Point(20, 65);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(475, 322);
-            this.metroPanel1.TabIndex = 3;
+            this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;

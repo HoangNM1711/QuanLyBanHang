@@ -110,7 +110,7 @@
             this.txbRegPhone.Location = new System.Drawing.Point(219, 269);
             this.txbRegPhone.Name = "txbRegPhone";
             this.txbRegPhone.Size = new System.Drawing.Size(223, 26);
-            this.txbRegPhone.TabIndex = 15;
+            this.txbRegPhone.TabIndex = 7;
             // 
             // txbRegEmail
             // 
@@ -118,7 +118,7 @@
             this.txbRegEmail.Location = new System.Drawing.Point(219, 235);
             this.txbRegEmail.Name = "txbRegEmail";
             this.txbRegEmail.Size = new System.Drawing.Size(223, 26);
-            this.txbRegEmail.TabIndex = 14;
+            this.txbRegEmail.TabIndex = 6;
             // 
             // metroLabel5
             // 
@@ -138,7 +138,7 @@
             this.txbRegAddress.Multiline = true;
             this.txbRegAddress.Name = "txbRegAddress";
             this.txbRegAddress.Size = new System.Drawing.Size(223, 57);
-            this.txbRegAddress.TabIndex = 12;
+            this.txbRegAddress.TabIndex = 5;
             // 
             // metroLabel4
             // 
@@ -157,7 +157,7 @@
             this.txbRegName.Location = new System.Drawing.Point(219, 138);
             this.txbRegName.Name = "txbRegName";
             this.txbRegName.Size = new System.Drawing.Size(223, 26);
-            this.txbRegName.TabIndex = 10;
+            this.txbRegName.TabIndex = 4;
             // 
             // btnRegLogin
             // 
@@ -198,7 +198,7 @@
             this.txbRegPassword2.Location = new System.Drawing.Point(219, 103);
             this.txbRegPassword2.Name = "txbRegPassword2";
             this.txbRegPassword2.Size = new System.Drawing.Size(223, 26);
-            this.txbRegPassword2.TabIndex = 6;
+            this.txbRegPassword2.TabIndex = 3;
             this.txbRegPassword2.UseSystemPasswordChar = true;
             // 
             // txbRegPassword
@@ -207,7 +207,7 @@
             this.txbRegPassword.Location = new System.Drawing.Point(219, 73);
             this.txbRegPassword.Name = "txbRegPassword";
             this.txbRegPassword.Size = new System.Drawing.Size(223, 26);
-            this.txbRegPassword.TabIndex = 5;
+            this.txbRegPassword.TabIndex = 2;
             this.txbRegPassword.UseSystemPasswordChar = true;
             // 
             // metroLabel2
@@ -227,7 +227,7 @@
             this.txbRegUsername.Location = new System.Drawing.Point(219, 38);
             this.txbRegUsername.Name = "txbRegUsername";
             this.txbRegUsername.Size = new System.Drawing.Size(223, 26);
-            this.txbRegUsername.TabIndex = 3;
+            this.txbRegUsername.TabIndex = 1;
             // 
             // metroLabel1
             // 

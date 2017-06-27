@@ -187,6 +187,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hệThốngToolStripMenuItem,
             this.quảnLýDữLiệuToolStripMenuItem,
@@ -194,7 +195,7 @@
             this.làmSạchToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(875, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(875, 30);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -205,11 +206,11 @@
             this.toolStripSeparator4,
             this.đăngXuấtToolStripMenuItem1,
             this.thoátToolStripMenuItem});
-            this.hệThốngToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hệThốngToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hệThốngToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Highlight;
             this.hệThốngToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.System;
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(103, 23);
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
             this.hệThốngToolStripMenuItem.Text = "Hệ Thống";
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
@@ -217,21 +218,21 @@
             this.thôngTinTàiKhoảnToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.thôngTinTàiKhoảnToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.Information;
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông Tin Tài Khoản";
             this.thôngTinTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.thôngTinTàiKhoảnToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(217, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(255, 6);
             // 
             // đăngXuấtToolStripMenuItem1
             // 
             this.đăngXuấtToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.đăngXuấtToolStripMenuItem1.Image = global::QuanLyBanHang.Properties.Resources.LogOut;
             this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(220, 24);
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(258, 26);
             this.đăngXuấtToolStripMenuItem1.Text = "Đăng Xuất";
             this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem1_Click);
             // 
@@ -240,7 +241,7 @@
             this.thoátToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.thoátToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.Exit;
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
@@ -254,11 +255,11 @@
             this.sảnPhẩmToolStripMenuItem,
             this.toolStripSeparator8,
             this.đơnHàngToolStripMenuItem});
-            this.quảnLýDữLiệuToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýDữLiệuToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quảnLýDữLiệuToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Highlight;
             this.quảnLýDữLiệuToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.Data;
             this.quảnLýDữLiệuToolStripMenuItem.Name = "quảnLýDữLiệuToolStripMenuItem";
-            this.quảnLýDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(139, 23);
+            this.quảnLýDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.quảnLýDữLiệuToolStripMenuItem.Text = "Quản lý dữ liệu";
             // 
             // loạiSảnPhẩmToolStripMenuItem
@@ -266,69 +267,69 @@
             this.loạiSảnPhẩmToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.loạiSảnPhẩmToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.Category;
             this.loạiSảnPhẩmToolStripMenuItem.Name = "loạiSảnPhẩmToolStripMenuItem";
-            this.loạiSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
+            this.loạiSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.loạiSảnPhẩmToolStripMenuItem.Text = "Danh mục SP";
             this.loạiSảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.loạiSảnPhẩmToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(171, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(194, 6);
             // 
             // nhàSảnXuấtToolStripMenuItem
             // 
             this.nhàSảnXuấtToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.nhàSảnXuấtToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.Firm;
             this.nhàSảnXuấtToolStripMenuItem.Name = "nhàSảnXuấtToolStripMenuItem";
-            this.nhàSảnXuấtToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
+            this.nhàSảnXuấtToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.nhàSảnXuấtToolStripMenuItem.Text = "Hãng sản xuất";
             this.nhàSảnXuấtToolStripMenuItem.Click += new System.EventHandler(this.nhàSảnXuấtToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(171, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(194, 6);
             // 
             // sảnPhẩmToolStripMenuItem
             // 
             this.sảnPhẩmToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.sảnPhẩmToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.Product;
             this.sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
-            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
+            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.sảnPhẩmToolStripMenuItem.Text = "Sản phẩm";
             this.sảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.sảnPhẩmToolStripMenuItem_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(171, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(194, 6);
             // 
             // đơnHàngToolStripMenuItem
             // 
             this.đơnHàngToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.đơnHàngToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.Order;
             this.đơnHàngToolStripMenuItem.Name = "đơnHàngToolStripMenuItem";
-            this.đơnHàngToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
+            this.đơnHàngToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.đơnHàngToolStripMenuItem.Text = "Đơn hàng";
             this.đơnHàngToolStripMenuItem.Click += new System.EventHandler(this.đơnHàngToolStripMenuItem_Click);
             // 
             // doanhThuToolStripMenuItem
             // 
-            this.doanhThuToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doanhThuToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.doanhThuToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Highlight;
             this.doanhThuToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.Report;
             this.doanhThuToolStripMenuItem.Name = "doanhThuToolStripMenuItem";
-            this.doanhThuToolStripMenuItem.Size = new System.Drawing.Size(106, 23);
+            this.doanhThuToolStripMenuItem.Size = new System.Drawing.Size(123, 26);
             this.doanhThuToolStripMenuItem.Text = "Doanh thu";
             this.doanhThuToolStripMenuItem.Click += new System.EventHandler(this.doanhThuToolStripMenuItem_Click);
             // 
             // làmSạchToolStripMenuItem
             // 
-            this.làmSạchToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.làmSạchToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.làmSạchToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Highlight;
             this.làmSạchToolStripMenuItem.Image = global::QuanLyBanHang.Properties.Resources.Clean;
             this.làmSạchToolStripMenuItem.Name = "làmSạchToolStripMenuItem";
-            this.làmSạchToolStripMenuItem.Size = new System.Drawing.Size(76, 23);
+            this.làmSạchToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
             this.làmSạchToolStripMenuItem.Text = "Clean";
             this.làmSạchToolStripMenuItem.Click += new System.EventHandler(this.làmSạchToolStripMenuItem_Click);
             // 
